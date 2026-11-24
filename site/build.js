@@ -6,6 +6,7 @@ const path = require('path');
 const SITE = {
   name: 'Apollo 2026',
   baseUrl: 'https://leonidas10009.github.io/apollo-2026-docs/',
+  indexNowKey: '2a0ec4e4c1214a3cb4294257dee17b26',
   repo: 'https://github.com/leonidas10009/Apollo_2026',
   releases: 'https://github.com/leonidas10009/Apollo_2026/releases',
   issues: 'https://github.com/leonidas10009/Apollo_2026/issues',
@@ -451,6 +452,12 @@ Key facts:
   );
 
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '', 'utf8');
+
+  fs.writeFileSync(
+    path.join(OUT, `${SITE.indexNowKey}.txt`),
+    SITE.indexNowKey,
+    'utf8'
+  );
 
   const notFound = renderLayout(
     {
