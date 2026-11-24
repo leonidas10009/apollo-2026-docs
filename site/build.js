@@ -248,7 +248,11 @@ function renderLayout(page, body) {
   const langHome = siteLink(base, page.lang === 'es' ? '/es/' : '/');
   const canonical = absolute(page.slug);
   const alternate = absolute(page.alt);
-  const otherLang = page.lang === 'en' ? 'es' : 'en';
+  const langSwitch = page.lang === 'en'
+    ? `<span class="lang-option is-current" aria-current="true" lang="en">EN</span>
+        <a class="lang-option" href="${siteLink(base, page.alt)}" hreflang="es" lang="es" title="Español">ES</a>`
+    : `<a class="lang-option" href="${siteLink(base, page.alt)}" hreflang="en" lang="en" title="English">EN</a>
+        <span class="lang-option is-current" aria-current="true" lang="es">ES</span>`;
   const nav = NAV[page.lang];
   const navHtml = nav
     .map((item) => {
@@ -256,7 +260,6 @@ function renderLayout(page, body) {
       return `<a href="${siteLink(base, item.path)}"${active}>${escapeHtml(item.label)}</a>`;
     })
     .join('\n        ');
-  const alternateLabel = page.lang === 'en' ? 'Español' : 'English';
   const ogImage = SITE.baseUrl + 'assets/og-apollo-2026.png';
   const locale = page.lang === 'en' ? 'en_US' : 'es_ES';
   const otherLocale = page.lang === 'en' ? 'es_ES' : 'en_US';
@@ -331,7 +334,9 @@ function renderLayout(page, body) {
       <nav class="site-nav" aria-label="${page.lang === 'es' ? 'Principal' : 'Main'}">
         ${navHtml}
       </nav>
-      <a class="lang-switch" href="${siteLink(base, page.alt)}" hreflang="${otherLang}" lang="${otherLang}" title="${alternateLabel}">${otherLang.toUpperCase()}</a>
+      <div class="lang-switch" role="group" aria-label="${page.lang === 'es' ? 'Idioma' : 'Language'}">
+        ${langSwitch}
+      </div>
     </div>
   </header>
   <main id="main">
