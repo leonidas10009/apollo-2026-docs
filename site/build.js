@@ -249,10 +249,8 @@ function renderLayout(page, body) {
   const canonical = absolute(page.slug);
   const alternate = absolute(page.alt);
   const langSwitch = page.lang === 'en'
-    ? `<span class="lang-option is-current" aria-current="true" lang="en">EN</span>
-        <a class="lang-option" href="${siteLink(base, page.alt)}" hreflang="es" lang="es" title="Español">ES</a>`
-    : `<a class="lang-option" href="${siteLink(base, page.alt)}" hreflang="en" lang="en" title="English">EN</a>
-        <span class="lang-option is-current" aria-current="true" lang="es">ES</span>`;
+    ? `<a class="lang-switch" href="${siteLink(base, page.alt)}" hreflang="es" lang="es" title="Cambiar a español">Español</a>`
+    : `<a class="lang-switch" href="${siteLink(base, page.alt)}" hreflang="en" lang="en" title="Switch to English">English</a>`;
   const nav = NAV[page.lang];
   const navHtml = nav
     .map((item) => {
@@ -334,9 +332,7 @@ function renderLayout(page, body) {
       <nav class="site-nav" aria-label="${page.lang === 'es' ? 'Principal' : 'Main'}">
         ${navHtml}
       </nav>
-      <div class="lang-switch" role="group" aria-label="${page.lang === 'es' ? 'Idioma' : 'Language'}">
-        ${langSwitch}
-      </div>
+      ${langSwitch}
     </div>
   </header>
   <main id="main">
