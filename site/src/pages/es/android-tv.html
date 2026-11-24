@@ -1,0 +1,98 @@
+<section class="page-head">
+  <p class="eyebrow">Cliente · Android TV</p>
+  <h1>Juega a tu PC en Android TV con Artemis 2026</h1>
+  <p class="lead">Artemis 2026 es el cliente Android creado para Apollo 2026. Incluye un lanzador leanback para Android TV y Google TV, funciona con mando o gamepad y añade controles específicos de Apollo, como el cambio de pantalla virtual y el apagado remoto.</p>
+</section>
+
+<section class="article">
+  <aside class="callout note">
+    <p><strong>Fork no oficial.</strong> Artemis 2026 está basado en Artemis / Moonlight Noir y Moonlight. No está afiliado a ClassicOldSong, Moonlight Stream ni LizardByte. El nombre de paquete es distinto del Artemis oficial, así que ambas apps pueden convivir sin compartir emparejamientos.</p>
+  </aside>
+
+  <h2>¿Qué APK necesito?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>APK</th><th>Para qué sirve</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Artemis-1.0.3-arm64-v8a.apk</code></td><td><strong>Recomendado.</strong> La mayoría de TV boxes Android TV, dispositivos Google TV, móviles y tablets de los últimos años.</td></tr>
+        <tr><td><code>Artemis-1.0.3-armeabi-v7a.apk</code></td><td>TV y boxes antiguos de 32 bits.</td></tr>
+        <tr><td><code>Artemis-1.0.3-x86_64.apk</code></td><td>Chromebooks, emuladores x86 y dispositivos Android poco habituales.</td></tr>
+        <tr><td><code>Artemis-1.0.3-universal.apk</code></td><td>Alternativa si el instalador rechaza una ABI concreta. Archivo más grande, incluye todas las arquitecturas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">Descarga desde <a href="https://github.com/leonidas10009/Artemis-2026/releases">releases de Artemis 2026</a>. La página de release también publica los SHA-256. Ejemplo del APK recomendado: <code>04cd4887ea918d448453dabbef1d4cf869749543b3ba6e0720bcd9d07098c13f</code>.</p>
+
+  <h2>Instalar en Android TV o Google TV</h2>
+  <ol class="steps">
+    <li>
+      <h3>Permite instalar apps de origen desconocido</h3>
+      <p>En la TV, abre <strong>Configuración → Aplicaciones → Seguridad y restricciones → Instalar apps desconocidas</strong> y permite la app con la que abrirás el APK, por ejemplo <em>Downloader</em> o tu gestor de archivos.</p>
+    </li>
+    <li>
+      <h3>Lleva el APK al dispositivo</h3>
+      <p>Android TV normalmente no tiene navegador. Las opciones más sencillas son:</p>
+      <ul>
+        <li>Instalar <strong>Downloader</strong> desde Play Store e introducir la URL del release, o un enlace corto que crees tú.</li>
+        <li>Copiar el APK a un USB y abrirlo con un gestor de archivos.</li>
+        <li>Usar <code>adb install Artemis-1.0.3-arm64-v8a.apk</code> desde un ordenador en la misma red.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Instala y abre Artemis</h3>
+      <p>La app aparece en el lanzador leanback. No necesita pantalla táctil; el mando de la TV y los gamepads sirven para navegar.</p>
+    </li>
+    <li>
+      <h3>Encuentra tu PC</h3>
+      <p>Ambos dispositivos deben estar en la misma red. Artemis busca automáticamente hosts Apollo y compatibles con Moonlight. Si el descubrimiento falla, añade el host por dirección IP.</p>
+    </li>
+    <li>
+      <h3>Empareja</h3>
+      <p>Inicia el emparejamiento en Artemis y aprueba el PIN en la Web UI de Apollo, en <strong>PIN</strong>. Artemis también admite emparejamiento OTP/QR, que evita escribir un código con el mando de la TV.</p>
+    </li>
+  </ol>
+
+  <h2>Play Protect bloquea la instalación</h2>
+  <p>Android puede mostrar <em>«Aplicación bloqueada para proteger tu dispositivo»</em> al instalar un APK desde un navegador, mensajería o gestor de archivos. El aviso lo genera Play Protect, no la firma del APK. Artemis 1.0.2 eliminó el servicio de accesibilidad que lo provocaba y 1.0.3 ya no declara permisos sensibles.</p>
+  <ul>
+    <li>Desinstala la versión bloqueada, reinicia la TV e instala <code>Artemis-1.0.3-arm64-v8a.apk</code> o el APK universal.</li>
+    <li>En dispositivos Samsung, revisa <strong>Auto Blocker</strong>. En Android 16, revisa <strong>Protección avanzada</strong>.</li>
+    <li>Como último recurso, desactiva temporalmente <strong>Play Store → Perfil → Play Protect → Escanear apps con Play Protect</strong>, instala y vuelve a activarlo.</li>
+    <li>Instalar por ADB con <code>verifier_verify_adb_installs=0</code> también funciona; restaura el ajuste después.</li>
+  </ul>
+
+  <h2>Funciones específicas de Apollo</h2>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>Control de pantalla virtual</h3>
+      <p>Inicia una sesión en una pantalla virtual y cambia de modo desde el cliente sin tocar el host.</p>
+    </article>
+    <article class="card">
+      <h3>Energía remota</h3>
+      <p>Apaga, reinicia o cancela un apagado pendiente desde la página del PC. Requiere Apollo 1.0.1 o posterior y el permiso <code>server_cmd</code> para ese cliente.</p>
+    </article>
+    <article class="card">
+      <h3>Portapapeles</h3>
+      <p>Copia texto entre el cliente y el host cuando se concede el permiso.</p>
+    </article>
+    <article class="card">
+      <h3>Acciones de apps</h3>
+      <p>Inicia, reanuda, cierra, oculta o exporta una app como archivo <code>.art</code> para frontends de emuladores.</p>
+    </article>
+  </div>
+
+  <aside class="callout tip">
+    <p><strong>Mejor resultado en TV:</strong> usa conexión por cable en el host, Wi-Fi de 5 GHz o Ethernet en la TV y activa HDR en ambos lados si el panel lo soporta. Consulta <a href="{{base}}es/hdr-pantalla-virtual/">HDR y pantalla virtual</a>.</p>
+  </aside>
+
+  <h2>Requisitos</h2>
+  <ul>
+    <li>Android 8.0 o superior como base segura para las builds actuales de Artemis; los equipos muy antiguos pueden no funcionar.</li>
+    <li>Apollo 2026 en el host, o un host Sunshine para las funciones estándar de Moonlight.</li>
+    <li>Host y cliente en la misma red local para descubrimiento y emparejamiento.</li>
+  </ul>
+
+  <p class="small muted">Relacionado: <a href="{{base}}es/instalar-windows/">instalar Apollo 2026 en Windows</a> · <a href="{{base}}es/faq/">preguntas frecuentes</a></p>
+</section>

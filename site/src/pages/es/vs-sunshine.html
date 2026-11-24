@@ -1,0 +1,65 @@
+<section class="page-head">
+  <p class="eyebrow">Comparativa</p>
+  <h1>Apollo 2026 frente a Sunshine</h1>
+  <p class="lead">Apollo 2026 está construido sobre el código de Sunshine 2026. El núcleo de streaming, los protocolos y la compatibilidad con clientes se heredan. Las diferencias están en la capa de pantalla, la Web UI, los permisos y el cliente Android. Esta es una comparación honesta.</p>
+</section>
+
+<section class="article">
+  <aside class="callout note">
+    <p>Ambos proyectos son gratuitos y de código abierto bajo GPL-3.0. Apollo 2026 es un fork independiente y no está afiliado a LizardByte ni a los mantenedores de Sunshine.</p>
+  </aside>
+
+  <h2>De un vistazo</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>Apollo 2026</th><th>Sunshine</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Base</strong></td><td>Código de Sunshine 2026 con cambios de Apollo</td><td>Proyecto upstream original</td></tr>
+        <tr><td><strong>Licencia</strong></td><td>GPL-3.0</td><td>GPL-3.0</td></tr>
+        <tr><td><strong>Descargas precompiladas</strong></td><td>Instalador y ZIP portable para Windows x64</td><td>Paquetes para Windows, macOS, Linux y FreeBSD</td></tr>
+        <tr><td><strong>Pantalla virtual</strong></td><td>SudoVDA, incluido y gestionado por Apollo (Windows)</td><td>No integrada; usa un dummy plug o un driver de terceros</td></tr>
+        <tr><td><strong>Pantalla virtual HDR</strong></td><td>Resolución, frecuencia y estado HDR automáticos por cliente</td><td>Depende de la solución de pantalla que instales</td></tr>
+        <tr><td><strong>Identidad por cliente</strong></td><td>Windows recuerda distribución y HDR de cada cliente emparejado</td><td>No aplica sin una pantalla virtual gestionada</td></tr>
+        <tr><td><strong>Web UI</strong></td><td>Panel rediseñado, paleta de comandos, temas y permisos por cliente</td><td>Interfaz de configuración clásica</td></tr>
+        <tr><td><strong>Emparejamiento</strong></td><td>PIN y OTP/QR para Artemis</td><td>PIN</td></tr>
+        <tr><td><strong>Cliente Android</strong></td><td>Artemis 2026, con controles específicos de Apollo</td><td>Moonlight o Artemis</td></tr>
+        <tr><td><strong>Energía remota</strong></td><td>Sí, con el permiso <code>server_cmd</code></td><td>Sin equivalente integrado</td></tr>
+        <tr><td><strong>Comunidad y soporte</strong></td><td>Pequeña, específica del fork</td><td>Gran comunidad upstream y soporte de LizardByte</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Qué añade Apollo</h2>
+  <h3>Una pantalla virtual que se comporta como un monitor real</h3>
+  <p>Es la razón principal para elegir Apollo. SudoVDA viene incluido, lo instala el instalador y lo controla Apollo. La pantalla aparece al iniciar la sesión, se ajusta al modo del cliente y desaparece al terminarla. Windows guarda la configuración por identidad de cliente, así que una TV y una tablet pueden mantener resoluciones y HDR distintos.</p>
+  <p>Con Sunshine puedes conseguir algo parecido con un dummy plug, un emulador EDID o un driver de pantalla virtual aparte, pero la resolución y el cambio de HDR los gestionas tú.</p>
+
+  <h3>Una Web UI más práctica</h3>
+  <p>Apollo expone emparejamiento, apps, permisos, ajustes de codificador y logs en un panel responsive. La paleta de comandos (<code>Ctrl+K</code>) y el cambio de tema son comodidades, no motivos por sí solos, pero hacen que el host sea más agradable de mantener.</p>
+
+  <h3>Permisos por cliente</h3>
+  <p>El primer cliente emparejado recibe permisos completos. Los siguientes empiezan restringidos y puedes conceder entrada, portapapeles, transferencia de archivos, acciones de apps o comandos del servidor de forma individual. Esto importa si emites a una TV compartida o a un dispositivo que no controlas del todo.</p>
+
+  <h3>Integración con Artemis 2026</h3>
+  <p>Artemis 2026 entiende las funciones específicas de Apollo: control de pantalla virtual, sincronización del portapapeles, energía remota y exportación de lanzadores <code>.art</code>. Moonlight sigue funcionando y mantiene el conjunto estándar de funciones.</p>
+
+  <h2>Dónde Sunshine es mejor opción</h2>
+  <ul>
+    <li><strong>Necesitas paquetes para macOS, Linux o FreeBSD.</strong> Apollo publica actualmente builds para Windows x64; otras plataformas requieren compilar desde el código fuente.</li>
+    <li><strong>Quieres la comunidad más grande.</strong> Sunshine tiene más usuarios, más documentación y más guías de terceros.</li>
+    <li><strong>Prefieres el ritmo de release y el soporte upstream.</strong> Apollo es un fork pequeño con su propio calendario.</li>
+    <li><strong>Ya tienes una configuración de pantalla virtual que funciona.</strong> No hay motivo para cambiarla si es fiable.</li>
+  </ul>
+
+  <h2>Recomendación</h2>
+  <p>Si tu host es un PC con Windows y quieres pantallas virtuales HDR, resolución automática por cliente y un cliente Android TV que exponga esas funciones, <strong>Apollo 2026 es el paquete más completo</strong>. Empieza por la <a href="{{base}}es/instalar-windows/">guía de instalación en Windows</a>.</p>
+  <p>Si emites desde Linux o macOS, necesitas los paquetes upstream o quieres la mayor comunidad de soporte, <strong>quédate con Sunshine</strong>. Apollo hereda su núcleo de streaming, así que no pierdes calidad de vídeo ni compatibilidad de protocolo en ningún caso.</p>
+
+  <aside class="callout tip">
+    <p><strong>¿Puedo cambiar más adelante?</strong> Sí. Ambos usan el mismo protocolo y los mismos clientes. Los emparejamientos son por host, así que tendrás que emparejar los dispositivos otra vez, pero las apps y los ajustes del codificador se recrean fácilmente.</p>
+  </aside>
+
+  <p class="small muted">Relacionado: <a href="{{base}}es/hdr-pantalla-virtual/">HDR y pantalla virtual</a> · <a href="{{base}}es/android-tv/">Artemis 2026 en Android TV</a> · <a href="{{base}}es/faq/">preguntas frecuentes</a></p>
+</section>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leonidas10009.github.io/apollo-2026-docs/sitemap.xml

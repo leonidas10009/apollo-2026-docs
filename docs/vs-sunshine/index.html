@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apollo 2026 vs Sunshine — Game Streaming Host Comparison</title>
+  <meta name="description" content="Apollo 2026 vs Sunshine: virtual display, HDR, Web UI, permissions, Android client and platform support compared, with an honest recommendation.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/vs-sunshine/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/vs-sunshine/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/vs-sunshine/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/vs-sunshine/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="Apollo 2026 vs Sunshine — Game Streaming Host Comparison">
+  <meta property="og:description" content="Apollo 2026 vs Sunshine: virtual display, HDR, Web UI, permissions, Android client and platform support compared, with an honest recommendation.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/vs-sunshine/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apollo 2026 vs Sunshine — Game Streaming Host Comparison">
+  <meta name="twitter:description" content="Apollo 2026 vs Sunshine: virtual display, HDR, Web UI, permissions, Android client and platform support compared, with an honest recommendation.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"en","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leonidas10009.github.io/apollo-2026-docs/"},{"@type":"ListItem","position":2,"name":"Apollo 2026 vs Sunshine","item":"https://leonidas10009.github.io/apollo-2026-docs/vs-sunshine/"}]}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../" aria-label="Apollo 2026 — home">
+        <img src="../assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../install-windows/">Install</a>
+        <a href="../hdr-virtual-display/">HDR &amp; virtual display</a>
+        <a href="../android-tv/">Android TV</a>
+        <a href="../vs-sunshine/" class="is-active" aria-current="page">vs Sunshine</a>
+        <a href="../faq/">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../es/vs-sunshine/" hreflang="es" lang="es" title="Español">ES</a>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>Apollo 2026 vs Sunshine</span>
+      </nav>
+    <section class="page-head">
+  <p class="eyebrow">Comparison</p>
+  <h1>Apollo 2026 vs Sunshine</h1>
+  <p class="lead">Apollo 2026 is built on the Sunshine 2026 codebase. The streaming core, the protocols and the client compatibility are inherited. The differences are in the display layer, the Web UI, permissions and the Android client. Here is an honest comparison.</p>
+</section>
+
+<section class="article">
+  <aside class="callout note">
+    <p>Both projects are free and open source under GPL-3.0. Apollo 2026 is an independent fork and is not affiliated with LizardByte or the Sunshine maintainers.</p>
+  </aside>
+
+  <h2>At a glance</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>Apollo 2026</th><th>Sunshine</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Base</strong></td><td>Sunshine 2026 codebase, with Apollo changes</td><td>Original upstream project</td></tr>
+        <tr><td><strong>License</strong></td><td>GPL-3.0</td><td>GPL-3.0</td></tr>
+        <tr><td><strong>Prebuilt downloads</strong></td><td>Windows x64 installer and portable ZIP</td><td>Windows, macOS, Linux and FreeBSD packages</td></tr>
+        <tr><td><strong>Virtual display</strong></td><td>SudoVDA, bundled and managed by Apollo (Windows)</td><td>Not built in; use a dummy plug or a third-party driver</td></tr>
+        <tr><td><strong>HDR virtual display</strong></td><td>Automatic resolution, refresh rate and HDR state per client</td><td>Depends on the display solution you provide</td></tr>
+        <tr><td><strong>Per-client identity</strong></td><td>Windows remembers layout and HDR per paired client</td><td>Not applicable without a managed virtual display</td></tr>
+        <tr><td><strong>Web UI</strong></td><td>Redesigned dashboard, command palette, themes, client permissions</td><td>Classic configuration UI</td></tr>
+        <tr><td><strong>Pairing</strong></td><td>PIN plus OTP/QR for Artemis</td><td>PIN</td></tr>
+        <tr><td><strong>Android client</strong></td><td>Artemis 2026, with Apollo-specific controls</td><td>Moonlight or Artemis</td></tr>
+        <tr><td><strong>Remote power actions</strong></td><td>Yes, with the <code>server_cmd</code> permission</td><td>No built-in equivalent</td></tr>
+        <tr><td><strong>Community and support</strong></td><td>Small, fork-specific</td><td>Large upstream community and LizardByte support</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What Apollo adds</h2>
+  <h3>A virtual display that behaves like a real monitor</h3>
+  <p>This is the main reason to choose Apollo. SudoVDA is bundled, installed by the installer and driven by Apollo. The display appears when the stream starts, matches the client mode and disappears when the session ends. Windows stores the layout per client identity, so a TV and a tablet can keep different resolutions and HDR settings.</p>
+  <p>With Sunshine you can achieve something similar with a dummy plug, an EDID emulator or a separate virtual display driver, but you manage the resolution and HDR switching yourself.</p>
+
+  <h3>A more practical Web UI</h3>
+  <p>Apollo exposes pairing, apps, permissions, encoder settings and logs in a responsive dashboard. The command palette (<code>Ctrl+K</code>) and theme switcher are conveniences, not reasons on their own, but they make the host easier to live with.</p>
+
+  <h3>Per-client permissions</h3>
+  <p>The first paired client receives full permissions. Later clients start restricted, and you grant input, clipboard, file transfer, app actions or server commands individually. This matters if you stream to a shared TV or a device you do not fully trust.</p>
+
+  <h3>Artemis 2026 integration</h3>
+  <p>Artemis 2026 understands Apollo-specific features: virtual display control, clipboard sync, remote power actions and <code>.art</code> launcher export. Moonlight still works and keeps the standard feature set.</p>
+
+  <h2>Where Sunshine is the better choice</h2>
+  <ul>
+    <li><strong>You need packages for macOS, Linux or FreeBSD.</strong> Apollo currently publishes Windows x64 builds; other platforms require building from source.</li>
+    <li><strong>You want the largest community.</strong> Sunshine has more users, more documentation and more third-party guides.</li>
+    <li><strong>You prefer the upstream release cadence and support.</strong> Apollo is a small fork with its own release schedule.</li>
+    <li><strong>You already have a virtual display setup you like.</strong> There is no reason to replace it if it works reliably.</li>
+  </ul>
+
+  <h2>Recommendation</h2>
+  <p>If your host is a Windows PC and you want HDR virtual displays, automatic client resolution and an Android TV client that exposes those features, <strong>Apollo 2026 is the more complete package</strong>. Start with the <a href="../install-windows/">Windows install guide</a>.</p>
+  <p>If you stream from Linux or macOS, need upstream packaging, or want the largest support community, <strong>stay with Sunshine</strong>. Apollo inherits its streaming core, so you are not missing video quality or protocol compatibility either way.</p>
+
+  <aside class="callout tip">
+    <p><strong>Can I switch later?</strong> Yes. Both use the same protocol and the same clients. Pairing data is per host, so you will need to pair your devices again, but apps and encoder settings are easy to recreate.</p>
+  </aside>
+
+  <p class="small muted">Related: <a href="../hdr-virtual-display/">HDR and virtual display</a> · <a href="../android-tv/">Artemis 2026 on Android TV</a> · <a href="../faq/">FAQ</a></p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Self-hosted, low-latency game streaming with HDR virtual displays for Windows and Linux.</p>
+        </div>
+        <div>
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="../install-windows/">Install on Windows</a></li>
+            <li><a href="../hdr-virtual-display/">HDR & virtual display</a></li>
+            <li><a href="../android-tv/">Android TV</a></li>
+            <li><a href="../faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Project</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream. All credit to the original authors.</p>
+      <p class="footer-meta">Documentation updated 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

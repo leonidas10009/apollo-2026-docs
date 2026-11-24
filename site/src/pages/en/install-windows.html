@@ -1,0 +1,97 @@
+<section class="page-head">
+  <p class="eyebrow">Install · Windows</p>
+  <h1>Install Apollo 2026 on Windows 11 or 10</h1>
+  <p class="lead">The Windows installer is the recommended way to run the host. It sets up the service, the firewall rules and the bundled SudoVDA virtual display driver. This guide takes you from download to your first stream.</p>
+</section>
+
+<section class="article">
+  <aside class="callout warn">
+    <p><strong>Before you start:</strong> the current release publishes <strong>Windows x64</strong> builds only: an installer (<code>Apollo-1.0.2-win64-setup.exe</code>) and a portable ZIP. Linux, macOS and FreeBSD users need to build from source using the upstream documentation.</p>
+    <p>The Windows binaries are <strong>not code-signed</strong>, so SmartScreen may show “Unknown publisher”. Verify the SHA-256 below before running the file.</p>
+  </aside>
+
+  <h2>Requirements</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Windows</strong></td><td>Windows 10 22H2 or Windows 11</td><td>Windows 11 24H2, fully updated</td></tr>
+        <tr><td><strong>CPU</strong></td><td>4 cores</td><td>6 cores or more for 1080p60 + game</td></tr>
+        <tr><td><strong>GPU</strong></td><td>NVIDIA NVENC, AMD AMF or Intel Quick Sync</td><td>GTX 1080 / RX 5000 / Intel HD 510 or newer for 4K</td></tr>
+        <tr><td><strong>RAM</strong></td><td>8 GB</td><td>16 GB</td></tr>
+        <tr><td><strong>Network</strong></td><td>5 GHz Wi-Fi</td><td>Gigabit Ethernet on the host</td></tr>
+        <tr><td><strong>Virtual display</strong></td><td>Windows 10 22H2+ with SudoVDA</td><td>Windows 11 24H2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Step by step</h2>
+  <ol class="steps">
+    <li>
+      <h3>Download the installer</h3>
+      <p>Get <code>Apollo-1.0.2-win64-setup.exe</code> from the <a href="https://github.com/leonidas10009/Apollo_2026/releases">Apollo 2026 releases page</a>.</p>
+      <p>Optional but recommended: check the hash in PowerShell before running it.</p>
+      <pre><code>Get-FileHash .\Apollo-1.0.2-win64-setup.exe -Algorithm SHA256</code></pre>
+      <p class="small muted">Expected: <code>8b2e9d49ebee2418e0d02e5adcbd93a268d274349387e5ee45c7d9b881e7338f</code></p>
+    </li>
+    <li>
+      <h3>Run the installer</h3>
+      <p>Choose the components you actually need. Keep the <strong>SudoVDA virtual display</strong> option enabled if you want HDR virtual displays and automatic client resolution. The installer also creates the Windows firewall rules.</p>
+      <p>If SmartScreen appears, select <em>More info → Run anyway</em> after verifying the hash.</p>
+    </li>
+    <li>
+      <h3>Open the Web UI</h3>
+      <p>Apollo starts in the notification area. Open <a href="https://localhost:47990">https://localhost:47990</a> and create the administrator username and password on the welcome page.</p>
+      <p>The certificate is self-signed, so the browser will warn you once. This is expected on a local host.</p>
+    </li>
+    <li>
+      <h3>Pair your client</h3>
+      <p>Install Moonlight or <a href="https://github.com/leonidas10009/Artemis-2026/releases">Artemis 2026</a> on the device you want to play on. In the client, add the host and enter the PIN shown by the client.</p>
+      <p>In the Apollo Web UI, open <strong>PIN</strong>, enter the code and approve the device. Artemis clients can also use OTP/QR pairing from the same page.</p>
+    </li>
+    <li>
+      <h3>Start a stream</h3>
+      <p>Pick <strong>Desktop</strong> or one of your apps. When the session starts, Apollo creates the virtual display, matches the client resolution and refresh rate, and removes it when the app closes.</p>
+    </li>
+  </ol>
+
+  <h2>Installer or portable ZIP?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>Installer (recommended)</th><th>Portable ZIP (lite)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Setup</strong></td><td>Guided, installs service and firewall rules</td><td>Manual scripts, run as administrator</td></tr>
+        <tr><td><strong>Virtual display</strong></td><td>SudoVDA bundled and configured</td><td>SudoVDA bundled, must be installed manually</td></tr>
+        <tr><td><strong>Performance</strong></td><td>Full</td><td>Reduced, not recommended for most users</td></tr>
+        <tr><td><strong>Support</strong></td><td>Supported path</td><td>No support provided</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>If you use the portable ZIP, open an administrator command prompt in the extracted folder and run <code>scripts\add-firewall-rule.bat</code>, then <code>scripts\install-service.bat</code> and <code>scripts\autostart-service.bat</code>.</p>
+
+  <h2>Check that it worked</h2>
+  <ul class="checklist">
+    <li>The Apollo icon is visible in the notification area.</li>
+    <li><code>https://localhost:47990</code> loads and accepts your credentials.</li>
+    <li>Device Manager shows <strong>SudoMaker Virtual Display Adapter</strong> under Display adapters.</li>
+    <li>A client can see the host on the local network and pair successfully.</li>
+  </ul>
+
+  <aside class="callout tip">
+    <p><strong>Installing on a laptop with two GPUs?</strong> The virtual display may be attached to the integrated GPU. See the dual-GPU section in the <a href="https://github.com/leonidas10009/Apollo_2026#configuration-for-dual-gpu-laptops">project README</a> before changing encoder settings.</p>
+  </aside>
+
+  <h2>Common install problems</h2>
+  <h3>The Web UI does not load</h3>
+  <p>Check that the Apollo service is running and that the firewall rule exists. If you changed the Web UI port, use the new one. A forgotten password can be reset from an administrator terminal with <code>apollo.exe --creds &lt;user&gt; &lt;password&gt;</code>.</p>
+  <h3>No virtual display appears when streaming</h3>
+  <p>Confirm that SudoVDA is installed and that no other virtual display driver (for example a dummy plug or a third-party IDD) is active. Apollo recommends removing other virtual display solutions to avoid conflicts.</p>
+  <h3>The client cannot find the PC</h3>
+  <p>Make sure the network profile is <strong>Private</strong>, the firewall rule is present, and both devices are on the same subnet. VPNs and client isolation on the router can block discovery.</p>
+
+  <p class="small muted">Next: <a href="{{base}}hdr-virtual-display/">set up HDR and the virtual display →</a> · <a href="{{base}}android-tv/">install Artemis 2026 on Android TV →</a></p>
+</section>

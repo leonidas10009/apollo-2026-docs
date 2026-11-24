@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HDR Game Streaming &amp; Virtual Display — Apollo 2026</title>
+  <meta name="description" content="Set up HDR game streaming on Windows 11 with Apollo 2026: SudoVDA virtual display, automatic resolution, per-client persistence and dual-GPU laptops.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/hdr-pantalla-virtual/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="HDR Game Streaming &amp; Virtual Display — Apollo 2026">
+  <meta property="og:description" content="Set up HDR game streaming on Windows 11 with Apollo 2026: SudoVDA virtual display, automatic resolution, per-client persistence and dual-GPU laptops.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HDR Game Streaming &amp; Virtual Display — Apollo 2026">
+  <meta name="twitter:description" content="Set up HDR game streaming on Windows 11 with Apollo 2026: SudoVDA virtual display, automatic resolution, per-client persistence and dual-GPU laptops.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"en","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leonidas10009.github.io/apollo-2026-docs/"},{"@type":"ListItem","position":2,"name":"HDR & virtual display","item":"https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/"}]}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../" aria-label="Apollo 2026 — home">
+        <img src="../assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../install-windows/">Install</a>
+        <a href="../hdr-virtual-display/" class="is-active" aria-current="page">HDR &amp; virtual display</a>
+        <a href="../android-tv/">Android TV</a>
+        <a href="../vs-sunshine/">vs Sunshine</a>
+        <a href="../faq/">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../es/hdr-pantalla-virtual/" hreflang="es" lang="es" title="Español">ES</a>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>HDR &amp; virtual display</span>
+      </nav>
+    <section class="page-head">
+  <p class="eyebrow">Display · HDR</p>
+  <h1>HDR game streaming and the virtual display</h1>
+  <p class="lead">Apollo 2026 can create a virtual monitor on demand with the resolution, refresh rate and HDR state requested by the client. This guide covers the Windows setup, what to check when HDR looks wrong, and the limits of the current implementation.</p>
+</section>
+
+<section class="article">
+  <h2>How the virtual display works</h2>
+  <p>Apollo uses <strong>SudoVDA</strong>, a virtual display adapter bundled with the Windows installer. When a stream starts, Apollo creates a display that matches the client configuration. When the session ends, the display is removed.</p>
+  <p>Each paired client gets a <strong>fixed display identity</strong>. Windows remembers the resolution, position and HDR settings for that identity, so the same tablet or TV keeps its layout between sessions without scripts or manual switching.</p>
+
+  <aside class="callout warn">
+    <p><strong>Remove other virtual display solutions first.</strong> Dummy plugs, vendor IDD drivers and leftover virtual monitors can conflict with SudoVDA and produce black screens or duplicated displays. Disable them in Device Manager and in the Apollo configuration before troubleshooting anything else.</p>
+  </aside>
+
+  <h2>Requirements</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Item</th><th>Requirement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Windows</strong></td><td>Windows 10 22H2+ or Windows 11 for the virtual display</td></tr>
+        <tr><td><strong>Driver</strong></td><td>SudoVDA, included in the Apollo installer</td></tr>
+        <tr><td><strong>GPU encoding</strong></td><td>HEVC Main 10 or AV1 10-bit support for HDR (NVIDIA, AMD or Intel)</td></tr>
+        <tr><td><strong>Host HDR</strong></td><td>HDR enabled in Windows, with an HDR-capable display or an EDID emulator attached</td></tr>
+        <tr><td><strong>Client HDR</strong></td><td>HDR enabled in Moonlight or Artemis 2026, on an HDR-capable screen</td></tr>
+        <tr><td><strong>Calibration</strong></td><td>A calibrated HDR profile on the host improves the result significantly</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Setup</h2>
+  <ol class="steps">
+    <li>
+      <h3>Enable HDR on the host</h3>
+      <p>Open <strong>Settings → System → Display → HDR</strong> and turn HDR on. If the PC has no HDR-capable monitor attached, Windows may hide the option; an EDID emulator or the virtual display itself can provide an HDR-capable target.</p>
+    </li>
+    <li>
+      <h3>Confirm SudoVDA is installed</h3>
+      <p>In Device Manager, look for <strong>SudoMaker Virtual Display Adapter</strong> under Display adapters. If it is missing, rerun the Apollo installer and keep the virtual display component selected.</p>
+    </li>
+    <li>
+      <h3>Configure the virtual display in Apollo</h3>
+      <p>In the Web UI, open <strong>Configuration → Audio/Video</strong> and check the virtual display options. The important ones are:</p>
+      <ul>
+        <li><strong>Virtual display</strong>: creates the display when a stream starts.</li>
+        <li><strong>HDR option</strong>: set to <em>auto</em> to follow the client request when the display supports it.</li>
+        <li><strong>Fallback mode</strong>: resolution used when the client does not request one, in <code>WidthxHeightxFPS</code> format.</li>
+        <li><strong>Isolated virtual display</strong>: moves the virtual display so it does not overlap a physical monitor.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Enable HDR on the client</h3>
+      <p>In Moonlight or Artemis 2026, open the stream settings and enable HDR. If the client option is off, the host sends SDR and an HDR desktop can look overexposed.</p>
+    </li>
+    <li>
+      <h3>Calibrate</h3>
+      <p>Stream the Windows HDR Calibration app to the client and save a profile for streaming. In-game brightness and HDR calibration may still need adjustment because the client panel is usually dimmer than a desktop monitor.</p>
+    </li>
+  </ol>
+
+  <h2>When HDR looks wrong</h2>
+  <h3>Washed out or grey image</h3>
+  <p>The stream is probably SDR while the host desktop is in HDR. Check the client HDR toggle first, then the Apollo HDR option.</p>
+  <h3>Wrong colors only on the virtual display</h3>
+  <p>Some virtual display configurations report an incorrect HDR state. Apollo includes an optional workaround that turns HDR off and on again at stream start. Set <code>dd_wa_hdr_toggle_delay = 500</code> in the configuration and test. Leave it at <code>0</code> unless you actually have the problem: it adds delay to every stream start.</p>
+  <h3>HDR option is missing</h3>
+  <p>The GPU encoder may not support HEVC Main 10 or AV1 10-bit. Check the encoder list in the Web UI, update the GPU driver, and try HEVC instead of AV1 (or the reverse).</p>
+  <h3>Stream starts on the wrong monitor</h3>
+  <p>Enable <strong>Isolated virtual display</strong> or set the display position explicitly. Windows may also remember a layout from a previous client identity; remove the paired client and pair it again to reset the layout.</p>
+
+  <h2>Linux and macOS</h2>
+  <p>The SudoVDA virtual display is <strong>Windows-only</strong>. HDR streaming is officially supported on Windows hosts and <strong>experimental on Linux</strong>, where it requires the KMS capture backend and a compositor with HDR support, such as Gamescope or KDE Plasma 6. X11 and NvFBC capture do not support HDR.</p>
+  <p>On Linux, virtual outputs are provided by the compositor (for example a wlroots output in Hyprland) rather than by Apollo itself.</p>
+
+  <aside class="callout note">
+    <p><strong>Dual-GPU laptops:</strong> if the virtual display is created on the integrated GPU, the stream may be captured from the wrong adapter. The project README documents the recommended configuration for hybrid graphics.</p>
+  </aside>
+
+  <p class="small muted">Related: <a href="../install-windows/">Windows install guide</a> · <a href="../android-tv/">Artemis 2026 on Android TV</a> · <a href="../faq/">FAQ and troubleshooting</a></p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Self-hosted, low-latency game streaming with HDR virtual displays for Windows and Linux.</p>
+        </div>
+        <div>
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="../install-windows/">Install on Windows</a></li>
+            <li><a href="../hdr-virtual-display/">HDR & virtual display</a></li>
+            <li><a href="../android-tv/">Android TV</a></li>
+            <li><a href="../faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Project</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream. All credit to the original authors.</p>
+      <p class="footer-meta">Documentation updated 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

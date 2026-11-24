@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apollo 2026 — Self-Hosted Game Streaming for Windows &amp; Linux</title>
+  <meta name="description" content="Apollo 2026 is a self-hosted, low-latency game streaming host for Windows and Linux with HDR virtual display, Web UI and Moonlight-compatible clients.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="Apollo 2026 — Self-Hosted Game Streaming for Windows &amp; Linux">
+  <meta property="og:description" content="Apollo 2026 is a self-hosted, low-latency game streaming host for Windows and Linux with HDR virtual display, Web UI and Moonlight-compatible clients.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apollo 2026 — Self-Hosted Game Streaming for Windows &amp; Linux">
+  <meta name="twitter:description" content="Apollo 2026 is a self-hosted, low-latency game streaming host for Windows and Linux with HDR virtual display, Web UI and Moonlight-compatible clients.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"en","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Apollo 2026 — home">
+        <img src="./assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./install-windows/">Install</a>
+        <a href="./hdr-virtual-display/">HDR &amp; virtual display</a>
+        <a href="./android-tv/">Android TV</a>
+        <a href="./vs-sunshine/">vs Sunshine</a>
+        <a href="./faq/">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="./es/" hreflang="es" lang="es" title="Español">ES</a>
+    </div>
+  </header>
+  <main id="main">
+    
+    <section class="hero">
+  <p class="eyebrow">Self-hosted game streaming · Windows &amp; Linux</p>
+  <h1>Your PC games, streamed with HDR and low latency.</h1>
+  <p class="lead">Apollo 2026 is an independent, self-hosted game streaming host. It keeps the Sunshine 2026 streaming core and adds HDR virtual displays, a modern Web UI, per-client permissions and first-class support for Artemis 2026 on Android and Android TV.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://github.com/leonidas10009/Apollo_2026/releases">Download Apollo 2026 1.0.2</a>
+    <a class="btn" href="./install-windows/">Install guide</a>
+  </div>
+  <ul class="chips">
+    <li>Windows 10 22H2+ / 11</li>
+    <li>Linux from source</li>
+    <li>HDR virtual display</li>
+    <li>GPL-3.0</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>What is Apollo 2026?</h2>
+  <p>Apollo 2026 runs on the gaming PC. It captures the desktop or a game, encodes the video with the GPU and streams it over your local network to a Moonlight-compatible client. There is no cloud account and no subscription: the host and the client talk directly to each other.</p>
+  <p>It is a continuation of <strong>Apollo</strong> by ClassicOldSong, built on the <strong>Sunshine 2026</strong> codebase. Apollo 2026 is an independent, unofficial fork maintained by <a href="https://github.com/leonidas10009">Leonidas</a>. It is not affiliated with the upstream projects, and all credit for the original work belongs to their authors.</p>
+  <aside class="callout note">
+    <p><strong>New to game streaming?</strong> You need two pieces: a host on the gaming PC (Apollo 2026) and a client on the device you play on (Moonlight or Artemis 2026). Start with the <a href="./install-windows/">Windows install guide</a>.</p>
+  </aside>
+</section>
+
+<section class="section">
+  <h2>What it adds to Sunshine</h2>
+  <div class="grid grid-3">
+    <article class="card">
+      <span class="kicker">Display</span>
+      <h3>HDR virtual display</h3>
+      <p>SudoVDA creates a virtual monitor on demand, matches the client resolution and refresh rate, and keeps a fixed identity per client. No dummy plug and no manual resolution switching.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Control</span>
+      <h3>Modern Web UI</h3>
+      <p>Pair clients, edit apps, manage permissions and change audio/video settings from a responsive dashboard with a command palette and themes.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Security</span>
+      <h3>Per-client permissions</h3>
+      <p>Grant input, clipboard, app launch and server commands per device. The first paired client gets full access; later clients start restricted.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Performance</span>
+      <h3>Hardware encoding</h3>
+      <p>Use NVIDIA NVENC, AMD AMF, Intel Quick Sync or a software encoder. H.264, HEVC and AV1 work where the GPU and client support them.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Clients</span>
+      <h3>Android and Android TV</h3>
+      <p>Artemis 2026 adds Apollo-specific features: virtual display control, clipboard sync, remote power actions and a leanback launcher for TV.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Latency</span>
+      <h3>Native client resolution</h3>
+      <p>Stream at the client's native resolution and frame rate, with low-latency tuning inherited from the Sunshine 2026 core.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li>
+      <h3>Install the host</h3>
+      <p>Run the Windows installer (recommended) or use the portable package. The installer bundles the SudoVDA virtual display driver. On Linux, macOS and FreeBSD, build from source.</p>
+      <p><a href="./install-windows/">Windows installation guide →</a></p>
+    </li>
+    <li>
+      <h3>Pair a client</h3>
+      <p>Open the Web UI at <code>https://localhost:47990</code>, then pair Moonlight, Artemis 2026 or Artemis PC with a PIN or an OTP/QR code. Grant the permissions that client needs.</p>
+      <p><a href="./android-tv/">Android TV setup →</a></p>
+    </li>
+    <li>
+      <h3>Play</h3>
+      <p>Launch a game or the desktop from the client. Apollo creates the virtual display when the stream starts and removes it when the session ends.</p>
+      <p><a href="./hdr-virtual-display/">HDR and virtual display setup →</a></p>
+    </li>
+  </ol>
+</section>
+
+<section class="section">
+  <h2>Supported clients</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Client</th><th>Platforms</th><th>Best for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Moonlight</strong></td><td>Windows, macOS, Linux, iOS, Android, Android TV</td><td>The standard Moonlight experience and the widest device support.</td></tr>
+        <tr><td><strong>Artemis 2026</strong></td><td>Android, Android TV, Google TV, tablets</td><td>Apollo-specific features such as virtual display control, clipboard sync and remote power actions.</td></tr>
+        <tr><td><strong>Artemis PC</strong></td><td>Windows (Qt)</td><td>A desktop client with remote desktop mode, clipboard sync and power commands.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Requirements at a glance</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Host OS</strong></td><td>Windows 10 22H2+ or Windows 11 (prebuilt). Linux and macOS build from source.</td><td>Windows 11 24H2 for HDR and the virtual display</td></tr>
+        <tr><td><strong>GPU</strong></td><td>NVIDIA NVENC, AMD AMF/VCE, Intel Quick Sync or software encoding</td><td>GTX 1080 / RX 5000 / Intel HD 510 or newer for 4K</td></tr>
+        <tr><td><strong>Network</strong></td><td>5 GHz Wi-Fi</td><td>Gigabit Ethernet on the host; wired or Wi-Fi 6 on the client</td></tr>
+        <tr><td><strong>HDR</strong></td><td>GPU with HEVC Main 10 or AV1 10-bit encoding, HDR enabled in Windows and on the client</td><td>Windows 11 24H2 with a calibrated HDR display</td></tr>
+        <tr><td><strong>Virtual display</strong></td><td>Windows 10 22H2+ with the bundled SudoVDA driver</td><td>Windows 11 24H2, single or dual GPU</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">The SudoVDA virtual display is Windows-only. HDR is officially supported on Windows and experimental on Linux, where it requires KMS capture plus an HDR-capable compositor. Always check the <a href="https://github.com/leonidas10009/Apollo_2026/releases">latest release notes</a> for the exact supported configurations.</p>
+</section>
+
+<section class="section">
+  <h2>Start with the guide you need</h2>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>Install on Windows</h3>
+      <p>Installer vs portable ZIP, first run, firewall rules and pairing.</p>
+      <p><a href="./install-windows/">Read the install guide →</a></p>
+    </article>
+    <article class="card">
+      <h3>HDR and virtual display</h3>
+      <p>SudoVDA, Windows 11 requirements, dual-GPU laptops and HDR caveats.</p>
+      <p><a href="./hdr-virtual-display/">Set up HDR →</a></p>
+    </article>
+    <article class="card">
+      <h3>Android TV</h3>
+      <p>Install Artemis 2026 on a TV, tablet or Google TV device and pair it.</p>
+      <p><a href="./android-tv/">Stream to your TV →</a></p>
+    </article>
+    <article class="card">
+      <h3>Apollo 2026 vs Sunshine</h3>
+      <p>What is inherited, what is added, and which host fits your setup.</p>
+      <p><a href="./vs-sunshine/">Read the comparison →</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Common questions</h2>
+  <div class="faq-item">
+    <h3>Is Apollo 2026 free?</h3>
+    <p>Yes. Apollo 2026 is free and open source under GPL-3.0. You can download the binaries from GitHub Releases and build it from source.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is it the official Apollo or Sunshine?</h3>
+    <p>No. Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Does it work with Moonlight?</h3>
+    <p>Yes. Apollo 2026 is compatible with Moonlight clients. Artemis 2026 adds Apollo-specific features such as virtual display control and remote power actions.</p>
+  </div>
+  <p><a href="./faq/">See all frequently asked questions →</a></p>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Apollo 2026",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Self-hosted game streaming host",
+  "operatingSystem": "Windows 10 22H2+, Windows 11, Linux, macOS, FreeBSD",
+  "softwareVersion": "1.0.2",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "codeRepository": "https://github.com/leonidas10009/Apollo_2026",
+  "downloadUrl": "https://github.com/leonidas10009/Apollo_2026/releases",
+  "url": "https://leonidas10009.github.io/apollo-2026-docs/",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Leonidas",
+    "url": "https://github.com/leonidas10009"
+  },
+  "isBasedOn": "https://github.com/SunshineStream/Sunshine"
+}
+</script>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Self-hosted, low-latency game streaming with HDR virtual displays for Windows and Linux.</p>
+        </div>
+        <div>
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="./install-windows/">Install on Windows</a></li>
+            <li><a href="./hdr-virtual-display/">HDR & virtual display</a></li>
+            <li><a href="./android-tv/">Android TV</a></li>
+            <li><a href="./faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Project</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream. All credit to the original authors.</p>
+      <p class="footer-meta">Documentation updated 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

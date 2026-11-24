@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HDR y pantalla virtual con Apollo 2026 — Guía</title>
+  <meta name="description" content="Configura HDR y pantalla virtual en Windows 11 con Apollo 2026: SudoVDA, resolución automática, persistencia por cliente y portátiles con doble GPU.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/es/hdr-pantalla-virtual/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="../../assets/logo.png">
+  <link rel="apple-touch-icon" href="../../assets/logo.png">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/hdr-pantalla-virtual/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="HDR y pantalla virtual con Apollo 2026 — Guía">
+  <meta property="og:description" content="Configura HDR y pantalla virtual en Windows 11 con Apollo 2026: SudoVDA, resolución automática, persistencia por cliente y portátiles con doble GPU.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/es/hdr-pantalla-virtual/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HDR y pantalla virtual con Apollo 2026 — Guía">
+  <meta name="twitter:description" content="Configura HDR y pantalla virtual en Windows 11 con Apollo 2026: SudoVDA, resolución automática, persistencia por cliente y portátiles con doble GPU.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"es","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://leonidas10009.github.io/apollo-2026-docs/es/"},{"@type":"ListItem","position":2,"name":"HDR y pantalla virtual","item":"https://leonidas10009.github.io/apollo-2026-docs/es/hdr-pantalla-virtual/"}]}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../es/" aria-label="Apollo 2026 — inicio">
+        <img src="../../assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../../es/instalar-windows/">Instalar</a>
+        <a href="../../es/hdr-pantalla-virtual/" class="is-active" aria-current="page">HDR y pantalla virtual</a>
+        <a href="../../es/android-tv/">Android TV</a>
+        <a href="../../es/vs-sunshine/">vs Sunshine</a>
+        <a href="../../es/faq/">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../../hdr-virtual-display/" hreflang="en" lang="en" title="English">EN</a>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+        <a href="../../es/">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span>HDR y pantalla virtual</span>
+      </nav>
+    <section class="page-head">
+  <p class="eyebrow">Pantalla · HDR</p>
+  <h1>HDR y pantalla virtual en Apollo 2026</h1>
+  <p class="lead">Apollo 2026 puede crear un monitor virtual bajo demanda con la resolución, la frecuencia y el estado HDR que pide el cliente. Esta guía cubre la configuración en Windows, qué revisar cuando el HDR se ve mal y los límites de la implementación actual.</p>
+</section>
+
+<section class="article">
+  <h2>Cómo funciona la pantalla virtual</h2>
+  <p>Apollo usa <strong>SudoVDA</strong>, un adaptador de pantalla virtual incluido en el instalador de Windows. Al iniciar una sesión, Apollo crea una pantalla que coincide con la configuración del cliente. Al terminarla, la elimina.</p>
+  <p>Cada cliente emparejado recibe una <strong>identidad de pantalla fija</strong>. Windows recuerda la resolución, la posición y los ajustes HDR de esa identidad, así que la misma tablet o TV conserva su configuración entre sesiones sin scripts ni cambios manuales.</p>
+
+  <aside class="callout warn">
+    <p><strong>Elimina primero otras soluciones de pantalla virtual.</strong> Los dummy plugs, los drivers IDD de fabricante y los monitores virtuales antiguos pueden entrar en conflicto con SudoVDA y provocar pantallas negras o displays duplicados. Desactívalos en el Administrador de dispositivos y en la configuración de Apollo antes de investigar cualquier otra cosa.</p>
+  </aside>
+
+  <h2>Requisitos</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Requisito</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Windows</strong></td><td>Windows 10 22H2+ o Windows 11 para la pantalla virtual</td></tr>
+        <tr><td><strong>Driver</strong></td><td>SudoVDA, incluido en el instalador de Apollo</td></tr>
+        <tr><td><strong>Codificación GPU</strong></td><td>Soporte HEVC Main 10 o AV1 10 bits para HDR (NVIDIA, AMD o Intel)</td></tr>
+        <tr><td><strong>HDR en el host</strong></td><td>HDR activo en Windows, con una pantalla HDR o un emulador EDID conectado</td></tr>
+        <tr><td><strong>HDR en el cliente</strong></td><td>HDR activo en Moonlight o Artemis 2026, sobre una pantalla compatible</td></tr>
+        <tr><td><strong>Calibración</strong></td><td>Un perfil HDR calibrado en el host mejora mucho el resultado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Configuración</h2>
+  <ol class="steps">
+    <li>
+      <h3>Activa HDR en el host</h3>
+      <p>Abre <strong>Configuración → Sistema → Pantalla → HDR</strong> y actívalo. Si el PC no tiene un monitor HDR conectado, Windows puede ocultar la opción; un emulador EDID o la propia pantalla virtual pueden proporcionar un destino compatible con HDR.</p>
+    </li>
+    <li>
+      <h3>Confirma que SudoVDA está instalado</h3>
+      <p>En el Administrador de dispositivos, busca <strong>SudoMaker Virtual Display Adapter</strong> en Adaptadores de pantalla. Si no aparece, vuelve a ejecutar el instalador de Apollo y mantén seleccionado el componente de pantalla virtual.</p>
+    </li>
+    <li>
+      <h3>Configura la pantalla virtual en Apollo</h3>
+      <p>En la Web UI, abre <strong>Configuration → Audio/Video</strong> y revisa las opciones de pantalla virtual. Las importantes son:</p>
+      <ul>
+        <li><strong>Virtual display</strong>: crea la pantalla al iniciar la sesión.</li>
+        <li><strong>Opción HDR</strong>: en <em>auto</em> sigue la petición del cliente cuando la pantalla lo soporta.</li>
+        <li><strong>Modo de reserva</strong>: resolución cuando el cliente no pide una, en formato <code>AnchoxAltoxFPS</code>.</li>
+        <li><strong>Pantalla virtual aislada</strong>: mueve la pantalla virtual para que no se superponga a un monitor físico.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Activa HDR en el cliente</h3>
+      <p>En Moonlight o Artemis 2026, abre los ajustes de la sesión y activa HDR. Si la opción del cliente está desactivada, el host envía SDR y un escritorio HDR puede verse sobreexpuesto.</p>
+    </li>
+    <li>
+      <h3>Calibra</h3>
+      <p>Emite la app Windows HDR Calibration al cliente y guarda un perfil para streaming. Puede que aún tengas que ajustar el brillo y la calibración HDR del juego, porque el panel del cliente suele ser menos brillante que un monitor de escritorio.</p>
+    </li>
+  </ol>
+
+  <h2>Cuando el HDR se ve mal</h2>
+  <h3>Imagen lavada o gris</h3>
+  <p>Probablemente el stream es SDR mientras el escritorio del host está en HDR. Revisa primero el interruptor HDR del cliente y después la opción HDR de Apollo.</p>
+  <h3>Colores incorrectos solo en la pantalla virtual</h3>
+  <p>Algunas configuraciones de pantalla virtual informan mal del estado HDR. Apollo incluye un workaround opcional que apaga y vuelve a encender HDR al iniciar la sesión. Configura <code>dd_wa_hdr_toggle_delay = 500</code> y prueba. Déjalo en <code>0</code> salvo que tengas el problema: añade retardo a cada inicio de stream.</p>
+  <h3>No aparece la opción HDR</h3>
+  <p>Puede que el codificador de la GPU no soporte HEVC Main 10 o AV1 10 bits. Revisa la lista de codificadores en la Web UI, actualiza el driver de la GPU y prueba HEVC en lugar de AV1 (o al contrario).</p>
+  <h3>La sesión empieza en el monitor equivocado</h3>
+  <p>Activa <strong>Pantalla virtual aislada</strong> o fija la posición explícitamente. Windows también puede recordar una distribución de una identidad de cliente anterior; elimina el cliente emparejado y vuelve a emparejarlo para reiniciar la configuración.</p>
+
+  <h2>Linux y macOS</h2>
+  <p>La pantalla virtual SudoVDA es <strong>exclusiva de Windows</strong>. El HDR está soportado oficialmente en hosts Windows y es <strong>experimental en Linux</strong>, donde requiere el backend de captura KMS y un compositor con soporte HDR, como Gamescope o KDE Plasma 6. La captura X11 y NvFBC no soportan HDR.</p>
+  <p>En Linux, las salidas virtuales las proporciona el compositor (por ejemplo una salida wlroots en Hyprland), no Apollo.</p>
+
+  <aside class="callout note">
+    <p><strong>Portátiles con doble GPU:</strong> si la pantalla virtual se crea en la GPU integrada, la captura puede hacerse desde el adaptador equivocado. El README del proyecto documenta la configuración recomendada para gráficos híbridos.</p>
+  </aside>
+
+  <p class="small muted">Relacionado: <a href="../../es/instalar-windows/">guía de instalación en Windows</a> · <a href="../../es/android-tv/">Artemis 2026 en Android TV</a> · <a href="../../es/faq/">preguntas frecuentes</a></p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Streaming de juegos autoalojado, de baja latencia, con pantalla virtual HDR para Windows y Linux.</p>
+        </div>
+        <div>
+          <h2>Documentación</h2>
+          <ul>
+            <li><a href="../../es/instalar-windows/">Instalar en Windows</a></li>
+            <li><a href="../../es/hdr-pantalla-virtual/">HDR y pantalla virtual</a></li>
+            <li><a href="../../es/android-tv/">Android TV</a></li>
+            <li><a href="../../es/faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Proyecto</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 es un fork independiente y no oficial del ecosistema Apollo / Sunshine / Moonlight. No está afiliado a ClassicOldSong, LizardByte ni Moonlight Stream. Todo el crédito a sus autores originales.</p>
+      <p class="footer-meta">Documentación actualizada 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

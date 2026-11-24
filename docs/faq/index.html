@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apollo 2026 FAQ &amp; Troubleshooting — Common Fixes</title>
+  <meta name="description" content="Answers to common Apollo 2026 questions: virtual display not appearing, HDR looks wrong, input permissions, pairing errors and Play Protect warnings.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/faq/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/faq/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/faq/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/faq/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="Apollo 2026 FAQ &amp; Troubleshooting — Common Fixes">
+  <meta property="og:description" content="Answers to common Apollo 2026 questions: virtual display not appearing, HDR looks wrong, input permissions, pairing errors and Play Protect warnings.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/faq/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apollo 2026 FAQ &amp; Troubleshooting — Common Fixes">
+  <meta name="twitter:description" content="Answers to common Apollo 2026 questions: virtual display not appearing, HDR looks wrong, input permissions, pairing errors and Play Protect warnings.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"en","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leonidas10009.github.io/apollo-2026-docs/"},{"@type":"ListItem","position":2,"name":"FAQ & troubleshooting","item":"https://leonidas10009.github.io/apollo-2026-docs/faq/"}]}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../" aria-label="Apollo 2026 — home">
+        <img src="../assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../install-windows/">Install</a>
+        <a href="../hdr-virtual-display/">HDR &amp; virtual display</a>
+        <a href="../android-tv/">Android TV</a>
+        <a href="../vs-sunshine/">vs Sunshine</a>
+        <a href="../faq/" class="is-active" aria-current="page">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../es/faq/" hreflang="es" lang="es" title="Español">ES</a>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>FAQ &amp; troubleshooting</span>
+      </nav>
+    <section class="page-head">
+  <p class="eyebrow">Help</p>
+  <h1>Apollo 2026 FAQ and troubleshooting</h1>
+  <p class="lead">Short answers to the questions that come up most often: install warnings, virtual display problems, HDR, pairing, controllers and Android TV. Each answer links to the guide with the full procedure.</p>
+</section>
+
+<section class="article">
+  <div class="faq-item">
+    <h3>Is Apollo 2026 free?</h3>
+    <p>Yes. Apollo 2026 is free and open source under GPL-3.0. Binaries are on GitHub Releases and the full source is in the repository. There is no account, subscription or telemetry requirement.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Is this the official Apollo or Sunshine?</h3>
+    <p>No. Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is based on the Sunshine 2026 codebase and continues the original Apollo work, but it is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream. All credit for the original projects belongs to their authors.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does it work with Moonlight?</h3>
+    <p>Yes. Apollo 2026 is compatible with Moonlight clients on Windows, macOS, Linux, iOS, Android and Android TV. <a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a> adds Apollo-specific features such as virtual display control, clipboard sync and remote power actions.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Windows says “Unknown publisher”. Is the download safe?</h3>
+    <p>The current Windows executable and installer are not code-signed, so SmartScreen shows the generic warning. Verify the SHA-256 published on the release page, or build from source if you prefer. The expected hash for <code>Apollo-1.0.2-win64-setup.exe</code> is <code>8b2e9d49ebee2418e0d02e5adcbd93a268d274349387e5ee45c7d9b881e7338f</code>.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>The virtual display does not appear when I start a stream</h3>
+    <p>Check three things: SudoVDA is installed (Device Manager shows <em>SudoMaker Virtual Display Adapter</em>), the virtual display option is enabled in the Apollo Web UI, and no other virtual monitor or dummy plug is active. Apollo recommends removing other virtual display solutions to avoid conflicts. See the <a href="../hdr-virtual-display/">HDR and virtual display guide</a>.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>HDR looks washed out or overexposed</h3>
+    <p>Usually the client is receiving SDR while the host desktop is in HDR. Enable HDR in Moonlight or Artemis, then confirm the HDR option in Apollo is set to <em>auto</em>. If only the virtual display shows wrong colors, test <code>dd_wa_hdr_toggle_delay = 500</code>; leave it disabled otherwise because it delays every stream start.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>I cannot open the Web UI</h3>
+    <p>Use <a href="https://localhost:47990">https://localhost:47990</a> on the host. Check that the Apollo service is running and that the firewall rule exists. The certificate is self-signed, so accept the browser warning once. If you changed the port, use the new one.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>I forgot the Web UI username or password</h3>
+    <p>Open an administrator terminal where <code>apollo.exe</code> is installed and run <code>apollo.exe --creds &lt;new-user&gt; &lt;new-password&gt;</code>. Restart the service afterwards if the change does not take effect immediately.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>The controller works in Steam but not in games</h3>
+    <p>Apollo needs a virtual gamepad backend. On Windows, the Windows installer bundles SudoVDA but <strong>not</strong> ViGEmBus or the Virtual HID Broker. Install the backend you want separately: ViGEmBus 1.22.0 is a free fallback for Xbox 360 and DualShock 4, while the Virtual HID Broker is a separate licensed download with DualSense, Switch Pro and motion support. See the <a href="https://github.com/leonidas10009/Apollo_2026/blob/main/docs/troubleshooting.md">upstream troubleshooting guide</a>.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>My client cannot find the PC</h3>
+    <p>Confirm that both devices are on the same subnet, the Windows network profile is <strong>Private</strong>, and the firewall rule is present. VPNs, guest Wi-Fi and router client isolation can block discovery. Adding the host by IP address is the fastest workaround.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Play Protect blocks Artemis 2026 on my TV</h3>
+    <p>The 1.0.3 APK no longer declares the accessibility service or sensitive permissions that triggered the warning. Uninstall the blocked version, reboot the TV and reinstall the arm64 or universal APK. On Samsung, check Auto Blocker; on Android 16, check Advanced protection. The <a href="../android-tv/">Android TV guide</a> lists the remaining workarounds.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I stream over the internet, not just my LAN?</h3>
+    <p>Yes, but it is not the default and it is not a supported turnkey setup. You need a VPN or a correctly forwarded port range, a static route or dynamic DNS, and a strong Web UI password. A VPN such as WireGuard or Tailscale is simpler and safer than exposing the host directly.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does Apollo 2026 run on Linux?</h3>
+    <p>The codebase supports Linux and the upstream documentation covers it, but the current fork publishes Windows x64 builds only. Linux users need to build from source. The SudoVDA virtual display is Windows-only; HDR on Linux is experimental and requires KMS capture plus an HDR-capable compositor.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I update?</h3>
+    <p>Download the new installer from the releases page and run it over the existing installation. Your configuration, apps and pairings are preserved. Do not mix installer and portable formats in the same installation; uninstall the previous format first.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Where do I report a bug or ask for help?</h3>
+    <p>Open an issue at <a href="https://github.com/leonidas10009/Apollo_2026/issues">github.com/leonidas10009/Apollo_2026/issues</a> with the Apollo version, Windows version, GPU, client and a description of what you tried. Discussions are enabled for questions that are not bugs. For Artemis 2026, use the <a href="https://github.com/leonidas10009/Artemis-2026/issues">Artemis issue tracker</a>.</p>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Apollo 2026 free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Apollo 2026 is free and open source under GPL-3.0. Binaries are on GitHub Releases and the source is public." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Apollo 2026 the official Apollo or Sunshine?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Apollo 2026 is an independent, unofficial fork based on the Sunshine 2026 codebase. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Apollo 2026 work with Moonlight?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Apollo 2026 works with Moonlight clients and with Artemis 2026, which adds Apollo-specific features such as virtual display control and remote power actions." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Windows show Unknown publisher for Apollo 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The current Windows executable and installer are not code-signed, so SmartScreen shows a generic warning. Verify the SHA-256 published on the release page before running the file." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the virtual display not appear?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Check that SudoVDA is installed, the virtual display option is enabled in the Apollo Web UI, and no other virtual monitor or dummy plug is active." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does HDR look washed out?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The client is probably receiving SDR while the host is in HDR. Enable HDR in Moonlight or Artemis and set the Apollo HDR option to auto." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I reset the Apollo Web UI password?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Run apollo.exe --creds with a new username and password from an administrator terminal, then restart the service if needed." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Apollo 2026 run on Linux?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The codebase supports Linux, but the current fork publishes Windows x64 builds only. Linux users must build from source. The SudoVDA virtual display is Windows-only." }
+      }
+    ]
+  }
+  </script>
+
+  <aside class="callout tip">
+    <p><strong>Still stuck?</strong> The upstream documentation has detailed sections on <a href="https://github.com/leonidas10009/Apollo_2026/blob/main/docs/troubleshooting.md">troubleshooting</a>, <a href="https://github.com/leonidas10009/Apollo_2026/blob/main/docs/configuration.md">configuration</a> and <a href="https://github.com/leonidas10009/Apollo_2026/blob/main/docs/performance_tuning.md">performance tuning</a>.</p>
+  </aside>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Self-hosted, low-latency game streaming with HDR virtual displays for Windows and Linux.</p>
+        </div>
+        <div>
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="../install-windows/">Install on Windows</a></li>
+            <li><a href="../hdr-virtual-display/">HDR & virtual display</a></li>
+            <li><a href="../android-tv/">Android TV</a></li>
+            <li><a href="../faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Project</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream. All credit to the original authors.</p>
+      <p class="footer-meta">Documentation updated 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

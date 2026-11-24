@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artemis 2026 for Android TV — Stream Your PC to TV</title>
+  <meta name="description" content="Install Artemis 2026 on Android TV, Google TV or a tablet: APK downloads, leanback setup, pairing with Apollo 2026 and remote power actions.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/android-tv/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/android-tv/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/android-tv/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/android-tv/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="Artemis 2026 for Android TV — Stream Your PC to TV">
+  <meta property="og:description" content="Install Artemis 2026 on Android TV, Google TV or a tablet: APK downloads, leanback setup, pairing with Apollo 2026 and remote power actions.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/android-tv/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artemis 2026 for Android TV — Stream Your PC to TV">
+  <meta name="twitter:description" content="Install Artemis 2026 on Android TV, Google TV or a tablet: APK downloads, leanback setup, pairing with Apollo 2026 and remote power actions.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"en","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leonidas10009.github.io/apollo-2026-docs/"},{"@type":"ListItem","position":2,"name":"Android TV","item":"https://leonidas10009.github.io/apollo-2026-docs/android-tv/"}]}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../" aria-label="Apollo 2026 — home">
+        <img src="../assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../install-windows/">Install</a>
+        <a href="../hdr-virtual-display/">HDR &amp; virtual display</a>
+        <a href="../android-tv/" class="is-active" aria-current="page">Android TV</a>
+        <a href="../vs-sunshine/">vs Sunshine</a>
+        <a href="../faq/">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../es/android-tv/" hreflang="es" lang="es" title="Español">ES</a>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>Android TV</span>
+      </nav>
+    <section class="page-head">
+  <p class="eyebrow">Client · Android TV</p>
+  <h1>Stream your PC to Android TV with Artemis 2026</h1>
+  <p class="lead">Artemis 2026 is the Android client built for Apollo 2026. It includes a leanback launcher for Android TV and Google TV, works with a remote or gamepad, and adds Apollo-specific controls such as virtual display switching and remote power actions.</p>
+</section>
+
+<section class="article">
+  <aside class="callout note">
+    <p><strong>Unofficial fork.</strong> Artemis 2026 is based on Artemis / Moonlight Noir and Moonlight. It is not affiliated with ClassicOldSong, Moonlight Stream or LizardByte. The package name is different from the official Artemis app, so both can be installed side by side without sharing pairings.</p>
+  </aside>
+
+  <h2>Which APK do I need?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>APK</th><th>Use it for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Artemis-1.0.3-arm64-v8a.apk</code></td><td><strong>Recommended.</strong> Most Android TV boxes, Google TV devices, phones and tablets from the last few years.</td></tr>
+        <tr><td><code>Artemis-1.0.3-armeabi-v7a.apk</code></td><td>Older 32-bit TVs and boxes.</td></tr>
+        <tr><td><code>Artemis-1.0.3-x86_64.apk</code></td><td>Chromebooks, x86 emulators and unusual Android devices.</td></tr>
+        <tr><td><code>Artemis-1.0.3-universal.apk</code></td><td>Fallback when the installer rejects a specific ABI. Larger file, includes every architecture.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">Download from <a href="https://github.com/leonidas10009/Artemis-2026/releases">Artemis 2026 releases</a>. The release page also lists SHA-256 hashes. Example for the recommended APK: <code>04cd4887ea918d448453dabbef1d4cf869749543b3ba6e0720bcd9d07098c13f</code>.</p>
+
+  <h2>Install on Android TV or Google TV</h2>
+  <ol class="steps">
+    <li>
+      <h3>Allow installs from unknown sources</h3>
+      <p>On the TV, open <strong>Settings → Apps → Security &amp; restrictions → Install unknown apps</strong> and allow the app you will use to open the APK, for example <em>Downloader</em> or your file manager.</p>
+    </li>
+    <li>
+      <h3>Get the APK onto the device</h3>
+      <p>Android TV usually has no browser. The simplest options are:</p>
+      <ul>
+        <li>Install <strong>Downloader</strong> from the Play Store and enter the release URL, or a short link you create yourself.</li>
+        <li>Copy the APK to a USB drive and open it with a file manager.</li>
+        <li>Use <code>adb install Artemis-1.0.3-arm64-v8a.apk</code> from a computer on the same network.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Install and open Artemis</h3>
+      <p>The app appears in the leanback launcher. It does not require a touchscreen; the TV remote and gamepads work for navigation.</p>
+    </li>
+    <li>
+      <h3>Find your PC</h3>
+      <p>Both devices must be on the same network. Artemis scans for Apollo and Moonlight-compatible hosts automatically. If discovery fails, add the host by IP address.</p>
+    </li>
+    <li>
+      <h3>Pair</h3>
+      <p>Start pairing in Artemis, then approve the PIN in the Apollo Web UI under <strong>PIN</strong>. Artemis also supports OTP/QR pairing, which avoids typing a code with the TV remote.</p>
+    </li>
+  </ol>
+
+  <h2>Play Protect blocks the install</h2>
+  <p>Android may show <em>“App blocked to protect your device”</em> when installing an APK from a browser, messenger or file manager. The warning comes from Play Protect, not from the APK signature. Artemis 1.0.2 removed the accessibility service that used to trigger it, and 1.0.3 no longer declares sensitive permissions.</p>
+  <ul>
+    <li>Uninstall the blocked version, reboot the TV and install <code>Artemis-1.0.3-arm64-v8a.apk</code> or the universal APK.</li>
+    <li>On Samsung devices, check <strong>Auto Blocker</strong>. On Android 16, check <strong>Advanced protection</strong>.</li>
+    <li>As a last resort, temporarily disable <strong>Play Store → Profile → Play Protect → Scan apps with Play Protect</strong>, install, then re-enable it.</li>
+    <li>Installing over ADB with <code>verifier_verify_adb_installs=0</code> also works; restore the setting afterwards.</li>
+  </ul>
+
+  <h2>Apollo-specific features</h2>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>Virtual display control</h3>
+      <p>Start a stream on a virtual display and switch modes from the client without touching the host.</p>
+    </article>
+    <article class="card">
+      <h3>Remote power</h3>
+      <p>Shut down, restart or cancel a pending shutdown from the PC page. Requires Apollo 1.0.1 or later and the <code>server_cmd</code> permission for that client.</p>
+    </article>
+    <article class="card">
+      <h3>Clipboard sync</h3>
+      <p>Copy text between the client and the host when the permission is granted.</p>
+    </article>
+    <article class="card">
+      <h3>App actions</h3>
+      <p>Start, resume, close, hide or export an app as an <code>.art</code> launcher file for emulator frontends.</p>
+    </article>
+  </div>
+
+  <aside class="callout tip">
+    <p><strong>Best results on a TV:</strong> use a wired connection on the host, 5 GHz Wi-Fi or Ethernet on the TV, and enable HDR on both sides if the panel supports it. See <a href="../hdr-virtual-display/">HDR and virtual display</a>.</p>
+  </aside>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>Android 8.0 or newer is a safe baseline for current Artemis builds; very old boxes may not work.</li>
+    <li>Apollo 2026 on the host, or a Sunshine host for the standard Moonlight features.</li>
+    <li>Host and client on the same local network for discovery and pairing.</li>
+  </ul>
+
+  <p class="small muted">Related: <a href="../install-windows/">Install Apollo 2026 on Windows</a> · <a href="../faq/">FAQ and troubleshooting</a></p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Self-hosted, low-latency game streaming with HDR virtual displays for Windows and Linux.</p>
+        </div>
+        <div>
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="../install-windows/">Install on Windows</a></li>
+            <li><a href="../hdr-virtual-display/">HDR & virtual display</a></li>
+            <li><a href="../android-tv/">Android TV</a></li>
+            <li><a href="../faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Project</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 is an independent, unofficial fork in the Apollo / Sunshine / Moonlight ecosystem. It is not affiliated with ClassicOldSong, LizardByte or Moonlight Stream. All credit to the original authors.</p>
+      <p class="footer-meta">Documentation updated 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

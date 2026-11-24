@@ -1,0 +1,187 @@
+<section class="hero">
+  <p class="eyebrow">Streaming de juegos autoalojado · Windows y Linux</p>
+  <h1>Tus juegos de PC, con HDR y baja latencia.</h1>
+  <p class="lead">Apollo 2026 es un host de streaming de juegos autoalojado e independiente. Conserva el núcleo de streaming de Sunshine 2026 y añade pantallas virtuales HDR, una Web UI moderna, permisos por cliente y soporte directo para Artemis 2026 en Android y Android TV.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://github.com/leonidas10009/Apollo_2026/releases">Descargar Apollo 2026 1.0.2</a>
+    <a class="btn" href="{{base}}es/instalar-windows/">Guía de instalación</a>
+  </div>
+  <ul class="chips">
+    <li>Windows 10 22H2+ / 11</li>
+    <li>Compilación para Linux</li>
+    <li>Pantalla virtual HDR</li>
+    <li>GPL-3.0</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>¿Qué es Apollo 2026?</h2>
+  <p>Apollo 2026 se ejecuta en el PC de juegos. Captura el escritorio o un juego, codifica el vídeo con la GPU y lo envía por tu red local a un cliente compatible con Moonlight. No hay cuenta en la nube ni suscripción: el host y el cliente hablan directamente entre sí.</p>
+  <p>Es una continuación de <strong>Apollo</strong> de ClassicOldSong, construida sobre el código de <strong>Sunshine 2026</strong>. Apollo 2026 es un fork independiente y no oficial mantenido por <a href="https://github.com/leonidas10009">Leonidas</a>. No está afiliado a los proyectos originales y todo el crédito pertenece a sus autores.</p>
+  <aside class="callout note">
+    <p><strong>¿Es tu primera vez con el streaming de juegos?</strong> Necesitas dos piezas: un host en el PC de juegos (Apollo 2026) y un cliente en el dispositivo donde juegas (Moonlight o Artemis 2026). Empieza por la <a href="{{base}}es/instalar-windows/">guía de instalación en Windows</a>.</p>
+  </aside>
+</section>
+
+<section class="section">
+  <h2>Qué añade frente a Sunshine</h2>
+  <div class="grid grid-3">
+    <article class="card">
+      <span class="kicker">Pantalla</span>
+      <h3>Pantalla virtual HDR</h3>
+      <p>SudoVDA crea un monitor virtual bajo demanda, ajusta la resolución y la frecuencia al cliente y mantiene una identidad fija por dispositivo. Sin dummy plug y sin cambiar la resolución a mano.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Control</span>
+      <h3>Web UI moderna</h3>
+      <p>Empareja clientes, edita apps, gestiona permisos y cambia ajustes de audio y vídeo desde un panel responsive con paleta de comandos y temas.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Seguridad</span>
+      <h3>Permisos por cliente</h3>
+      <p>Concede entrada, portapapeles, lanzamiento de apps y comandos del servidor por dispositivo. El primer cliente emparejado recibe acceso completo; los siguientes empiezan restringidos.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Rendimiento</span>
+      <h3>Codificación por hardware</h3>
+      <p>Usa NVIDIA NVENC, AMD AMF, Intel Quick Sync o codificación por software. H.264, HEVC y AV1 funcionan donde la GPU y el cliente lo permiten.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Clientes</span>
+      <h3>Android y Android TV</h3>
+      <p>Artemis 2026 añade funciones específicas de Apollo: control de pantalla virtual, sincronización del portapapeles, apagado remoto y lanzador leanback para TV.</p>
+    </article>
+    <article class="card">
+      <span class="kicker">Latencia</span>
+      <h3>Resolución nativa del cliente</h3>
+      <p>Emite a la resolución y frecuencia nativas del cliente, con el ajuste de baja latencia heredado del núcleo de Sunshine 2026.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Cómo funciona</h2>
+  <ol class="steps">
+    <li>
+      <h3>Instala el host</h3>
+      <p>Ejecuta el instalador de Windows (recomendado) o usa el paquete portable. El instalador incluye el driver de pantalla virtual SudoVDA. En Linux, macOS y FreeBSD hay que compilar desde el código fuente.</p>
+      <p><a href="{{base}}es/instalar-windows/">Guía de instalación en Windows →</a></p>
+    </li>
+    <li>
+      <h3>Empareja un cliente</h3>
+      <p>Abre la Web UI en <code>https://localhost:47990</code> y empareja Moonlight, Artemis 2026 o Artemis PC con un PIN o un código OTP/QR. Concede al cliente solo los permisos que necesite.</p>
+      <p><a href="{{base}}es/android-tv/">Configuración en Android TV →</a></p>
+    </li>
+    <li>
+      <h3>Juega</h3>
+      <p>Lanza un juego o el escritorio desde el cliente. Apollo crea la pantalla virtual al iniciar la sesión y la elimina al terminarla.</p>
+      <p><a href="{{base}}es/hdr-pantalla-virtual/">Configuración de HDR y pantalla virtual →</a></p>
+    </li>
+  </ol>
+</section>
+
+<section class="section">
+  <h2>Clientes compatibles</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Cliente</th><th>Plataformas</th><th>Ideal para</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Moonlight</strong></td><td>Windows, macOS, Linux, iOS, Android, Android TV</td><td>La experiencia Moonlight estándar y la mayor compatibilidad de dispositivos.</td></tr>
+        <tr><td><strong>Artemis 2026</strong></td><td>Android, Android TV, Google TV, tablets</td><td>Funciones específicas de Apollo: pantalla virtual, portapapeles y apagado remoto.</td></tr>
+        <tr><td><strong>Artemis PC</strong></td><td>Windows (Qt)</td><td>Cliente de escritorio con modo escritorio remoto, portapapeles y comandos de energía.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Requisitos de un vistazo</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>Mínimo</th><th>Recomendado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SO del host</strong></td><td>Windows 10 22H2+ o Windows 11 (build precompilada)</td><td>Windows 11 24H2 para HDR y pantalla virtual</td></tr>
+        <tr><td><strong>GPU</strong></td><td>NVIDIA NVENC, AMD AMF/VCE, Intel Quick Sync o codificación por software</td><td>GTX 1080 / RX 5000 / Intel HD 510 o superior para 4K</td></tr>
+        <tr><td><strong>Red</strong></td><td>Wi-Fi de 5 GHz</td><td>Ethernet gigabit en el host; Wi-Fi 6 o cable en el cliente</td></tr>
+        <tr><td><strong>HDR</strong></td><td>GPU con HEVC Main 10 o AV1 10 bits y HDR activo en Windows</td><td>Windows 11 24H2 con pantalla HDR calibrada</td></tr>
+        <tr><td><strong>Pantalla virtual</strong></td><td>Windows 10 22H2+ con el driver SudoVDA incluido</td><td>Windows 11 24H2, una o dos GPU</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">La pantalla virtual SudoVDA es exclusiva de Windows. El HDR está soportado oficialmente en Windows y es experimental en Linux, donde requiere captura KMS y un compositor con HDR. Consulta las <a href="https://github.com/leonidas10009/Apollo_2026/releases">notas de la última versión</a> para conocer las configuraciones exactas.</p>
+</section>
+
+<section class="section">
+  <h2>Empieza por la guía que necesitas</h2>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>Instalar en Windows</h3>
+      <p>Instalador frente a ZIP portable, primer arranque, firewall y emparejamiento.</p>
+      <p><a href="{{base}}es/instalar-windows/">Leer la guía →</a></p>
+    </article>
+    <article class="card">
+      <h3>HDR y pantalla virtual</h3>
+      <p>SudoVDA, requisitos de Windows 11, portátiles con doble GPU y problemas de color.</p>
+      <p><a href="{{base}}es/hdr-pantalla-virtual/">Configurar HDR →</a></p>
+    </article>
+    <article class="card">
+      <h3>Android TV</h3>
+      <p>Instala Artemis 2026 en una TV, tablet o Google TV y empareja el equipo.</p>
+      <p><a href="{{base}}es/android-tv/">Jugar en la TV →</a></p>
+    </article>
+    <article class="card">
+      <h3>Apollo 2026 vs Sunshine</h3>
+      <p>Qué se hereda, qué se añade y qué host encaja con tu equipo.</p>
+      <p><a href="{{base}}es/vs-sunshine/">Leer la comparativa →</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-item">
+    <h3>¿Apollo 2026 es gratis?</h3>
+    <p>Sí. Apollo 2026 es gratis y de código abierto bajo GPL-3.0. Puedes descargar los binarios desde GitHub Releases y compilarlo desde el código fuente.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Es el Apollo o el Sunshine oficial?</h3>
+    <p>No. Apollo 2026 es un fork independiente y no oficial del ecosistema Apollo / Sunshine / Moonlight. No está afiliado a ClassicOldSong, LizardByte ni Moonlight Stream.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Funciona con Moonlight?</h3>
+    <p>Sí. Apollo 2026 es compatible con los clientes Moonlight. Artemis 2026 añade funciones específicas de Apollo, como el control de la pantalla virtual y el apagado remoto.</p>
+  </div>
+  <p><a href="{{base}}es/faq/">Ver todas las preguntas frecuentes →</a></p>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Apollo 2026",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Host de streaming de juegos autoalojado",
+  "operatingSystem": "Windows 10 22H2+, Windows 11",
+  "softwareVersion": "1.0.2",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "codeRepository": "https://github.com/leonidas10009/Apollo_2026",
+  "downloadUrl": "https://github.com/leonidas10009/Apollo_2026/releases",
+  "url": "https://leonidas10009.github.io/apollo-2026-docs/es/",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Leonidas",
+    "url": "https://github.com/leonidas10009"
+  },
+  "isBasedOn": "https://github.com/SunshineStream/Sunshine"
+}
+</script>

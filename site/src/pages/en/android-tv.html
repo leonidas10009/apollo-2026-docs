@@ -1,0 +1,98 @@
+<section class="page-head">
+  <p class="eyebrow">Client · Android TV</p>
+  <h1>Stream your PC to Android TV with Artemis 2026</h1>
+  <p class="lead">Artemis 2026 is the Android client built for Apollo 2026. It includes a leanback launcher for Android TV and Google TV, works with a remote or gamepad, and adds Apollo-specific controls such as virtual display switching and remote power actions.</p>
+</section>
+
+<section class="article">
+  <aside class="callout note">
+    <p><strong>Unofficial fork.</strong> Artemis 2026 is based on Artemis / Moonlight Noir and Moonlight. It is not affiliated with ClassicOldSong, Moonlight Stream or LizardByte. The package name is different from the official Artemis app, so both can be installed side by side without sharing pairings.</p>
+  </aside>
+
+  <h2>Which APK do I need?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>APK</th><th>Use it for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>Artemis-1.0.3-arm64-v8a.apk</code></td><td><strong>Recommended.</strong> Most Android TV boxes, Google TV devices, phones and tablets from the last few years.</td></tr>
+        <tr><td><code>Artemis-1.0.3-armeabi-v7a.apk</code></td><td>Older 32-bit TVs and boxes.</td></tr>
+        <tr><td><code>Artemis-1.0.3-x86_64.apk</code></td><td>Chromebooks, x86 emulators and unusual Android devices.</td></tr>
+        <tr><td><code>Artemis-1.0.3-universal.apk</code></td><td>Fallback when the installer rejects a specific ABI. Larger file, includes every architecture.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">Download from <a href="https://github.com/leonidas10009/Artemis-2026/releases">Artemis 2026 releases</a>. The release page also lists SHA-256 hashes. Example for the recommended APK: <code>04cd4887ea918d448453dabbef1d4cf869749543b3ba6e0720bcd9d07098c13f</code>.</p>
+
+  <h2>Install on Android TV or Google TV</h2>
+  <ol class="steps">
+    <li>
+      <h3>Allow installs from unknown sources</h3>
+      <p>On the TV, open <strong>Settings → Apps → Security &amp; restrictions → Install unknown apps</strong> and allow the app you will use to open the APK, for example <em>Downloader</em> or your file manager.</p>
+    </li>
+    <li>
+      <h3>Get the APK onto the device</h3>
+      <p>Android TV usually has no browser. The simplest options are:</p>
+      <ul>
+        <li>Install <strong>Downloader</strong> from the Play Store and enter the release URL, or a short link you create yourself.</li>
+        <li>Copy the APK to a USB drive and open it with a file manager.</li>
+        <li>Use <code>adb install Artemis-1.0.3-arm64-v8a.apk</code> from a computer on the same network.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Install and open Artemis</h3>
+      <p>The app appears in the leanback launcher. It does not require a touchscreen; the TV remote and gamepads work for navigation.</p>
+    </li>
+    <li>
+      <h3>Find your PC</h3>
+      <p>Both devices must be on the same network. Artemis scans for Apollo and Moonlight-compatible hosts automatically. If discovery fails, add the host by IP address.</p>
+    </li>
+    <li>
+      <h3>Pair</h3>
+      <p>Start pairing in Artemis, then approve the PIN in the Apollo Web UI under <strong>PIN</strong>. Artemis also supports OTP/QR pairing, which avoids typing a code with the TV remote.</p>
+    </li>
+  </ol>
+
+  <h2>Play Protect blocks the install</h2>
+  <p>Android may show <em>“App blocked to protect your device”</em> when installing an APK from a browser, messenger or file manager. The warning comes from Play Protect, not from the APK signature. Artemis 1.0.2 removed the accessibility service that used to trigger it, and 1.0.3 no longer declares sensitive permissions.</p>
+  <ul>
+    <li>Uninstall the blocked version, reboot the TV and install <code>Artemis-1.0.3-arm64-v8a.apk</code> or the universal APK.</li>
+    <li>On Samsung devices, check <strong>Auto Blocker</strong>. On Android 16, check <strong>Advanced protection</strong>.</li>
+    <li>As a last resort, temporarily disable <strong>Play Store → Profile → Play Protect → Scan apps with Play Protect</strong>, install, then re-enable it.</li>
+    <li>Installing over ADB with <code>verifier_verify_adb_installs=0</code> also works; restore the setting afterwards.</li>
+  </ul>
+
+  <h2>Apollo-specific features</h2>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>Virtual display control</h3>
+      <p>Start a stream on a virtual display and switch modes from the client without touching the host.</p>
+    </article>
+    <article class="card">
+      <h3>Remote power</h3>
+      <p>Shut down, restart or cancel a pending shutdown from the PC page. Requires Apollo 1.0.1 or later and the <code>server_cmd</code> permission for that client.</p>
+    </article>
+    <article class="card">
+      <h3>Clipboard sync</h3>
+      <p>Copy text between the client and the host when the permission is granted.</p>
+    </article>
+    <article class="card">
+      <h3>App actions</h3>
+      <p>Start, resume, close, hide or export an app as an <code>.art</code> launcher file for emulator frontends.</p>
+    </article>
+  </div>
+
+  <aside class="callout tip">
+    <p><strong>Best results on a TV:</strong> use a wired connection on the host, 5 GHz Wi-Fi or Ethernet on the TV, and enable HDR on both sides if the panel supports it. See <a href="{{base}}hdr-virtual-display/">HDR and virtual display</a>.</p>
+  </aside>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>Android 8.0 or newer is a safe baseline for current Artemis builds; very old boxes may not work.</li>
+    <li>Apollo 2026 on the host, or a Sunshine host for the standard Moonlight features.</li>
+    <li>Host and client on the same local network for discovery and pairing.</li>
+  </ul>
+
+  <p class="small muted">Related: <a href="{{base}}install-windows/">Install Apollo 2026 on Windows</a> · <a href="{{base}}faq/">FAQ and troubleshooting</a></p>
+</section>

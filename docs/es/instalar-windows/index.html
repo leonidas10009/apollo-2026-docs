@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instalar Apollo 2026 en Windows 11 o 10 — Guía paso a paso</title>
+  <meta name="description" content="Instala Apollo 2026 en Windows: requisitos, instalador frente a ZIP portable, primer arranque, firewall y emparejamiento con Moonlight o Artemis 2026.">
+  <link rel="canonical" href="https://leonidas10009.github.io/apollo-2026-docs/es/instalar-windows/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <meta name="author" content="Leonidas">
+  <meta name="theme-color" content="#080b10">
+  <link rel="icon" type="image/png" href="../../assets/logo.png">
+  <link rel="apple-touch-icon" href="../../assets/logo.png">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="alternate" hreflang="en" href="https://leonidas10009.github.io/apollo-2026-docs/install-windows/">
+  <link rel="alternate" hreflang="es" href="https://leonidas10009.github.io/apollo-2026-docs/es/instalar-windows/">
+  <link rel="alternate" hreflang="x-default" href="https://leonidas10009.github.io/apollo-2026-docs/install-windows/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apollo 2026 Documentation">
+  <meta property="og:title" content="Instalar Apollo 2026 en Windows 11 o 10 — Guía paso a paso">
+  <meta property="og:description" content="Instala Apollo 2026 en Windows: requisitos, instalador frente a ZIP portable, primer arranque, firewall y emparejamiento con Moonlight o Artemis 2026.">
+  <meta property="og:url" content="https://leonidas10009.github.io/apollo-2026-docs/es/instalar-windows/">
+  <meta property="og:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Apollo 2026 — self-hosted game streaming host">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instalar Apollo 2026 en Windows 11 o 10 — Guía paso a paso">
+  <meta name="twitter:description" content="Instala Apollo 2026 en Windows: requisitos, instalador frente a ZIP portable, primer arranque, firewall y emparejamiento con Moonlight o Artemis 2026.">
+  <meta name="twitter:image" content="https://leonidas10009.github.io/apollo-2026-docs/assets/og-apollo-2026.png">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Apollo 2026 Documentation","url":"https://leonidas10009.github.io/apollo-2026-docs/","inLanguage":"es","publisher":{"@type":"Person","name":"Leonidas","url":"https://github.com/leonidas10009"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://leonidas10009.github.io/apollo-2026-docs/es/"},{"@type":"ListItem","position":2,"name":"Instalar en Windows","item":"https://leonidas10009.github.io/apollo-2026-docs/es/instalar-windows/"}]}]</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../es/" aria-label="Apollo 2026 — inicio">
+        <img src="../../assets/logo.png" alt="" width="36" height="36">
+        <span>Apollo 2026 <small>docs</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="../../es/instalar-windows/" class="is-active" aria-current="page">Instalar</a>
+        <a href="../../es/hdr-pantalla-virtual/">HDR y pantalla virtual</a>
+        <a href="../../es/android-tv/">Android TV</a>
+        <a href="../../es/vs-sunshine/">vs Sunshine</a>
+        <a href="../../es/faq/">FAQ</a>
+      </nav>
+      <a class="lang-switch" href="../../install-windows/" hreflang="en" lang="en" title="English">EN</a>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+        <a href="../../es/">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span>Instalar en Windows</span>
+      </nav>
+    <section class="page-head">
+  <p class="eyebrow">Instalar · Windows</p>
+  <h1>Instalar Apollo 2026 en Windows 11 o 10</h1>
+  <p class="lead">El instalador de Windows es la forma recomendada de ejecutar el host. Configura el servicio, las reglas de firewall y el driver de pantalla virtual SudoVDA incluido. Esta guía va desde la descarga hasta tu primera partida.</p>
+</section>
+
+<section class="article">
+  <aside class="callout warn">
+    <p><strong>Antes de empezar:</strong> la versión actual publica solo binarios para <strong>Windows x64</strong>: un instalador (<code>Apollo-1.0.2-win64-setup.exe</code>) y un ZIP portable. En Linux, macOS y FreeBSD hay que compilar desde el código fuente con la documentación upstream.</p>
+    <p>Los binarios de Windows <strong>no están firmados</strong>, así que SmartScreen puede mostrar «Editor desconocido». Verifica el SHA-256 antes de ejecutar el archivo.</p>
+  </aside>
+
+  <h2>Requisitos</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>Mínimo</th><th>Recomendado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Windows</strong></td><td>Windows 10 22H2 o Windows 11</td><td>Windows 11 24H2 actualizado</td></tr>
+        <tr><td><strong>CPU</strong></td><td>4 núcleos</td><td>6 núcleos o más para 1080p60 + juego</td></tr>
+        <tr><td><strong>GPU</strong></td><td>NVIDIA NVENC, AMD AMF o Intel Quick Sync</td><td>GTX 1080 / RX 5000 / Intel HD 510 o superior para 4K</td></tr>
+        <tr><td><strong>RAM</strong></td><td>8 GB</td><td>16 GB</td></tr>
+        <tr><td><strong>Red</strong></td><td>Wi-Fi de 5 GHz</td><td>Ethernet gigabit en el host</td></tr>
+        <tr><td><strong>Pantalla virtual</strong></td><td>Windows 10 22H2+ con SudoVDA</td><td>Windows 11 24H2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Paso a paso</h2>
+  <ol class="steps">
+    <li>
+      <h3>Descarga el instalador</h3>
+      <p>Obtén <code>Apollo-1.0.2-win64-setup.exe</code> desde la <a href="https://github.com/leonidas10009/Apollo_2026/releases">página de releases de Apollo 2026</a>.</p>
+      <p>Opcional pero recomendable: comprueba el hash en PowerShell antes de ejecutarlo.</p>
+      <pre><code>Get-FileHash .\Apollo-1.0.2-win64-setup.exe -Algorithm SHA256</code></pre>
+      <p class="small muted">Esperado: <code>8b2e9d49ebee2418e0d02e5adcbd93a268d274349387e5ee45c7d9b881e7338f</code></p>
+    </li>
+    <li>
+      <h3>Ejecuta el instalador</h3>
+      <p>Elige los componentes que realmente necesitas. Mantén activada la opción <strong>pantalla virtual SudoVDA</strong> si quieres HDR y resolución automática por cliente. El instalador también crea las reglas de firewall de Windows.</p>
+      <p>Si aparece SmartScreen, pulsa <em>Más información → Ejecutar de todas formas</em> después de verificar el hash.</p>
+    </li>
+    <li>
+      <h3>Abre la Web UI</h3>
+      <p>Apollo se inicia en el área de notificación. Abre <a href="https://localhost:47990">https://localhost:47990</a> y crea el usuario y la contraseña de administrador en la página de bienvenida.</p>
+      <p>El certificado es autofirmado, así que el navegador avisará una vez. Es lo esperado en un host local.</p>
+    </li>
+    <li>
+      <h3>Empareja el cliente</h3>
+      <p>Instala Moonlight o <a href="https://github.com/leonidas10009/Artemis-2026/releases">Artemis 2026</a> en el dispositivo con el que quieras jugar. En el cliente, añade el host e introduce el PIN que muestra el cliente.</p>
+      <p>En la Web UI de Apollo, abre <strong>PIN</strong>, introduce el código y aprueba el dispositivo. Los clientes Artemis también pueden usar emparejamiento OTP/QR desde la misma página.</p>
+    </li>
+    <li>
+      <h3>Inicia una sesión</h3>
+      <p>Elige <strong>Escritorio</strong> o una de tus apps. Al iniciar la sesión, Apollo crea la pantalla virtual, ajusta la resolución y la frecuencia al cliente y la elimina cuando cierras la app.</p>
+    </li>
+  </ol>
+
+  <h2>¿Instalador o ZIP portable?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>Instalador (recomendado)</th><th>ZIP portable (lite)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Configuración</strong></td><td>Guiada, instala el servicio y las reglas de firewall</td><td>Scripts manuales, como administrador</td></tr>
+        <tr><td><strong>Pantalla virtual</strong></td><td>SudoVDA incluido y configurado</td><td>SudoVDA incluido, hay que instalarlo a mano</td></tr>
+        <tr><td><strong>Rendimiento</strong></td><td>Completo</td><td>Reducido, no recomendado para la mayoría</td></tr>
+        <tr><td><strong>Soporte</strong></td><td>Ruta soportada</td><td>Sin soporte</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Si usas el ZIP portable, abre una consola de administrador en la carpeta extraída y ejecuta <code>scripts\add-firewall-rule.bat</code>, después <code>scripts\install-service.bat</code> y <code>scripts\autostart-service.bat</code>.</p>
+
+  <h2>Comprueba que funciona</h2>
+  <ul class="checklist">
+    <li>El icono de Apollo aparece en el área de notificación.</li>
+    <li><code>https://localhost:47990</code> carga y acepta tus credenciales.</li>
+    <li>El Administrador de dispositivos muestra <strong>SudoMaker Virtual Display Adapter</strong> en Adaptadores de pantalla.</li>
+    <li>Un cliente ve el host en la red local y se empareja correctamente.</li>
+  </ul>
+
+  <aside class="callout tip">
+    <p><strong>¿Instalas en un portátil con dos GPU?</strong> Puede que la pantalla virtual se cree en la GPU integrada. Consulta la sección de doble GPU del <a href="https://github.com/leonidas10009/Apollo_2026#configuration-for-dual-gpu-laptops">README del proyecto</a> antes de cambiar el codificador.</p>
+  </aside>
+
+  <h2>Problemas habituales de instalación</h2>
+  <h3>La Web UI no carga</h3>
+  <p>Comprueba que el servicio de Apollo está en marcha y que existe la regla de firewall. Si cambiaste el puerto de la Web UI, usa el nuevo. Si olvidaste la contraseña, puedes restablecerla desde una consola de administrador con <code>apollo.exe --creds &lt;usuario&gt; &lt;contraseña&gt;</code>.</p>
+  <h3>No aparece la pantalla virtual al emitir</h3>
+  <p>Confirma que SudoVDA está instalado y que no hay otro driver de pantalla virtual activo (por ejemplo un dummy plug o un IDD de terceros). Apollo recomienda eliminar otras soluciones de pantalla virtual para evitar conflictos.</p>
+  <h3>El cliente no encuentra el PC</h3>
+  <p>Asegúrate de que el perfil de red es <strong>Privado</strong>, la regla de firewall existe y ambos equipos están en la misma subred. Las VPN y el aislamiento de clientes del router pueden bloquear el descubrimiento.</p>
+
+  <p class="small muted">Siguiente: <a href="../../es/hdr-pantalla-virtual/">configurar HDR y la pantalla virtual →</a> · <a href="../../es/android-tv/">instalar Artemis 2026 en Android TV →</a></p>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Apollo 2026</p>
+          <p class="footer-copy">Streaming de juegos autoalojado, de baja latencia, con pantalla virtual HDR para Windows y Linux.</p>
+        </div>
+        <div>
+          <h2>Documentación</h2>
+          <ul>
+            <li><a href="../../es/instalar-windows/">Instalar en Windows</a></li>
+            <li><a href="../../es/hdr-pantalla-virtual/">HDR y pantalla virtual</a></li>
+            <li><a href="../../es/android-tv/">Android TV</a></li>
+            <li><a href="../../es/faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Proyecto</h2>
+          <ul>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026">Apollo 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/releases">Releases</a></li>
+            <li><a href="https://github.com/leonidas10009/Artemis-2026">Artemis 2026</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/issues">Issues</a></li>
+            <li><a href="https://github.com/leonidas10009/Apollo_2026/blob/main/LICENSE">GPL-3.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">Apollo 2026 es un fork independiente y no oficial del ecosistema Apollo / Sunshine / Moonlight. No está afiliado a ClassicOldSong, LizardByte ni Moonlight Stream. Todo el crédito a sus autores originales.</p>
+      <p class="footer-meta">Documentación actualizada 2026-11-24 · Apollo 2026 1.0.2 · Artemis 2026 1.0.3</p>
+    </div>
+  </footer>
+</body>
+</html>

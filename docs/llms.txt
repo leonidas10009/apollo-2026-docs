@@ -1,0 +1,23 @@
+# Apollo 2026
+
+> Apollo 2026 is an independent, self-hosted, low-latency game streaming host for Windows and Linux, based on the Sunshine 2026 codebase. It adds HDR virtual displays via SudoVDA, a Web UI, per-client permissions, OTP pairing and the Artemis 2026 Android client.
+
+Key facts:
+- License: GPL-3.0-only
+- Latest Apollo 2026 release: 1.0.2
+- Latest Artemis 2026 release: 1.0.3
+- Platforms: Windows (10 22H2+ / 11), Linux, macOS, FreeBSD; HDR virtual display is Windows-only at the moment
+- Not affiliated with ClassicOldSong, LizardByte or Moonlight Stream
+
+## Documentation
+- [Home](https://leonidas10009.github.io/apollo-2026-docs/)
+- [Install on Windows](https://leonidas10009.github.io/apollo-2026-docs/install-windows/)
+- [HDR and virtual display](https://leonidas10009.github.io/apollo-2026-docs/hdr-virtual-display/)
+- [Android TV with Artemis 2026](https://leonidas10009.github.io/apollo-2026-docs/android-tv/)
+- [Apollo 2026 vs Sunshine](https://leonidas10009.github.io/apollo-2026-docs/vs-sunshine/)
+- [FAQ and troubleshooting](https://leonidas10009.github.io/apollo-2026-docs/faq/)
+- [Spanish documentation](https://leonidas10009.github.io/apollo-2026-docs/es/)
+
+## Source
+- [Apollo 2026 repository](https://github.com/leonidas10009/Apollo_2026)
+- [Releases](https://github.com/leonidas10009/Apollo_2026/releases)
