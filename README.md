@@ -38,6 +38,10 @@ GitHub Pages serves the `main` branch, `/docs` folder. Every push that changes `
 
 Canonical URLs, Open Graph URLs and the sitemap use `SITE.baseUrl` in `site/build.js`. Update it if the site moves to a custom domain, then rebuild.
 
+## Search engines
+
+`site/build.js` writes an IndexNow verification key (`SITE.indexNowKey`) to the site root. After publishing new or changed pages, submit the URLs to `https://api.indexnow.org/indexnow` with that key; Bing, Yandex and Seznam consume it. Google does not use IndexNow and requires Search Console with `sitemap.xml`.
+
 ## Content policy
 
 - Apollo 2026 and Artemis 2026 are independent, unofficial forks in the Apollo / Sunshine / Moonlight ecosystem.
